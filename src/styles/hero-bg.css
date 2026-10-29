@@ -1,0 +1,42 @@
+/* =========================================================================
+   HERO BACKGROUND — OFFICIAL 1920x1080 POLLING BOOTH & GEOMETRIC IMAGE
+   Asset: ASSETS/back 01.jpg.jpeg (1920x1080)
+   Precision 16:9 proportion — no stretching, no cropping
+   ========================================================================= */
+
+.hero-background-root {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+  z-index: 0;
+  background: #FF6600;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Precision subtle vignette on left side to guarantee 100% white text readability */
+.hero-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 24, 39, 0.45) 0%,
+    rgba(17, 24, 39, 0.25) 38%,
+    rgba(17, 24, 39, 0.05) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+}

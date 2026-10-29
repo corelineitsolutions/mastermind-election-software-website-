@@ -1,0 +1,84 @@
+:root {
+  /* Mastermind Media Warm Orange & Pure White Brand Palette */
+  --color-orange-primary: #EA580C;
+  --color-orange-bright: #F97316;
+  --color-orange-dark: #C2410C;
+  --color-orange-hover: #D9480F;
+  --color-orange-subtle: #FFF7ED;
+  --color-orange-glow: rgba(234, 88, 12, 0.25);
+  --color-orange-tint: #FFEDD5;
+
+  /* Global Brand Accent Tokens (White with Orange Extracts & Touchups) */
+  --color-royal-blue: #EA580C;
+  --color-royal-blue-hover: #C2410C;
+  --color-royal-blue-subtle: #FFF7ED;
+  --color-royal-blue-glow: rgba(234, 88, 12, 0.25);
+  
+  --color-gold: #EA580C;
+  --color-gold-light: #FB923C;
+  --color-gold-dark: #C2410C;
+  --color-gold-subtle: #FFF7ED;
+
+  /* Modern Neutral Grays & Deep Slate for crisp contrast on White surfaces */
+  --color-navy-dark: #0F172A;
+  --color-navy-deep: #020617;
+  --color-navy-surface: #1E293B;
+  --color-navy-light: #334155;
+  
+  /* Text & Neutrals */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  --color-text-light: #F8FAFC;
+  --color-text-white: #FFFFFF;
+  
+  /* Backgrounds & Surfaces: Clean White Base */
+  --color-bg-light: #FFFFFF;
+  --color-bg-white: #FFFFFF;
+  --color-bg-subtle: #F8FAFC;
+  --color-border-light: #E2E8F0;
+  --color-border-card: #E2E8F0;
+  --color-border-accent: rgba(234, 88, 12, 0.22);
+  --color-border-gold: rgba(234, 88, 12, 0.25);
+
+  /* Status Colors */
+  --color-success: #10B981;
+  --color-success-bg: #ECFDF5;
+  --color-info: #EA580C;
+  --color-info-bg: #FFF7ED;
+  --color-warning: #F59E0B;
+  --color-warning-bg: #FFFBEB;
+  
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-devanagari: 'Noto Sans Devanagari', 'Inter', sans-serif;
+
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(16, 27, 53, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(16, 27, 53, 0.08), 0 1px 2px -1px rgba(16, 27, 53, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(16, 27, 53, 0.08), 0 2px 4px -2px rgba(16, 27, 53, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(16, 27, 53, 0.08), 0 4px 6px -4px rgba(16, 27, 53, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(16, 27, 53, 0.1), 0 8px 10px -6px rgba(16, 27, 53, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(16, 27, 53, 0.22);
+  --shadow-royal: 0 12px 24px -6px rgba(36, 87, 214, 0.35);
+  --shadow-navy: 0 12px 24px -6px rgba(16, 27, 53, 0.25);
+  --shadow-gold: 0 12px 24px -6px rgba(213, 173, 91, 0.3);
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Container */
+  --container-max: 1280px;
+}
