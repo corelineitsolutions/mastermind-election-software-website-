@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { 
@@ -12,8 +12,49 @@ import {
   Smartphone
 } from 'lucide-react';
 
+const HERO_THEMES = [
+  {
+    id: 'orange',
+    name: 'Orange Edition',
+    src: '/images/hero-themes/orange.png',
+    color: '#EA580C',
+    alt: 'Mastermind Election Software Suite - Orange Edition'
+  },
+  {
+    id: 'blue',
+    name: 'Blue Edition',
+    src: '/images/hero-themes/blue.png',
+    color: '#2563EB',
+    alt: 'Mastermind Election Software Suite - Blue Edition'
+  },
+  {
+    id: 'green',
+    name: 'Green Edition',
+    src: '/images/hero-themes/green.png',
+    color: '#16A34A',
+    alt: 'Mastermind Election Software Suite - Green Edition'
+  },
+  {
+    id: 'pink',
+    name: 'Pink Edition',
+    src: '/images/hero-themes/pink.png',
+    color: '#DB2777',
+    alt: 'Mastermind Election Software Suite - Pink Edition'
+  }
+];
+
 export const HeroSection = ({ onOpenDemo }) => {
   const { language } = useLanguage();
+  const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
+
+  // Auto-cycle images every 3 seconds: Orange -> Blue -> Green -> Pink -> Repeat
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentThemeIndex((prev) => (prev + 1) % HERO_THEMES.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const content = {
     mr: {
@@ -155,11 +196,18 @@ export const HeroSection = ({ onOpenDemo }) => {
             </div>
           </div>
 
-          {/* Right Column: Mastermind Media 5-in-1 Mobile App Suite Showcase */}
+          {/* Right Column: Mastermind Media Mobile App Suite Showcase */}
           <div className="hero-visual-col">
             <div className="hero-phones-showcase-wrap">
-              {/* Soft ambient spotlight glow behind phones */}
-              <div className="hero-phones-glow" aria-hidden="true" />
+              {/* Soft ambient spotlight glow behind phones that adapts to active theme */}
+              <div 
+                className="hero-phones-glow" 
+                style={{
+                  background: `radial-gradient(ellipse at center, rgba(255, 255, 255, 0.22) 0%, ${HERO_THEMES[currentThemeIndex].color}40 48%, transparent 72%)`,
+                  transition: 'background 0.8s ease'
+                }}
+                aria-hidden="true" 
+              />
 
               {/* Floating Feature Badge 1: Top Right */}
               <div className="hero-float-tag hero-float-top">
@@ -172,15 +220,34 @@ export const HeroSection = ({ onOpenDemo }) => {
                 </div>
               </div>
 
-              {/* 5 Smartphones Showcase Image */}
-              <img
-                src="/images/hero-phones.png"
-                alt="Mastermind Media 5-in-1 Election Mobile Software Suite"
-                className="hero-phones-img"
-                width="609"
-                height="328"
-                loading="eager"
-              />
+              {/* 4 Hero Theme Carousel (Orange -> Blue -> Green -> Pink, 3s auto-cycle) */}
+              <div className="hero-carousel-stage">
+                {HERO_THEMES.map((theme, idx) => (
+                  <img
+                    key={theme.id}
+                    src={theme.src}
+                    alt={theme.alt}
+                    className={`hero-carousel-img ${idx === currentThemeIndex ? 'active' : ''}`}
+                    width="471"
+                    height="530"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                  />
+                ))}
+              </div>
+
+              {/* Theme Cycle Indicator Dots */}
+              <div className="hero-carousel-dots" role="tablist" aria-label="Hero Theme Selector">
+                {HERO_THEMES.map((theme, idx) => (
+                  <button
+                    key={theme.id}
+                    type="button"
+                    onClick={() => setCurrentThemeIndex(idx)}
+                    className={`hero-dot-btn ${idx === currentThemeIndex ? 'active' : ''}`}
+                    style={{ '--dot-color': theme.color }}
+                    aria-label={`Select ${theme.name}`}
+                  />
+                ))}
+              </div>
 
               {/* Floating Feature Badge 2: Bottom Left */}
               <div className="hero-float-tag hero-float-bottom">
