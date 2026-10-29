@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { 
   Database, 
   MapPin, 
@@ -19,7 +20,28 @@ import {
 import { SoftwareMockup } from './SoftwareMockup';
 
 export const ElectionSoftwareSection = ({ onOpenDemo }) => {
+  const { language } = useLanguage();
   const [activePreviewTab, setActivePreviewTab] = useState('voter-search');
+
+  const content = {
+    mr: {
+      eyebrow: "प्रमुख सॉफ्टवेअर वैशिष्ट्ये",
+      title: "स्मार्ट निवडणूक व्यवस्थापनाची सुरुवात अचूक माहितीने होते.",
+      desc: "केंद्रीय निवडणूक व्यवस्थापन प्लॅटफॉर्मद्वारे मतदार नोंदी व्यवस्थापित करा, मतदारसंघ माहिती संघटित करा आणि मतदार स्लिप तयार करा."
+    },
+    hi: {
+      eyebrow: "प्रमुख सॉफ्टवेयर विशेषताएं",
+      title: "स्मार्ट चुनाव प्रबंधन की शुरुआत सटीक जानकारी से होती है।",
+      desc: "केंद्रीकृत चुनाव प्रबंधन प्लेटफॉर्म के माध्यम से मतदाता रिकॉर्ड प्रबंधित करें, निर्वाचन क्षेत्र की जानकारी संगठित करें और वोटर पर्ची तैयार करें।"
+    },
+    en: {
+      eyebrow: "CORE PRODUCT SHOWCASE",
+      title: "Smarter Election Management Starts with Better Information.",
+      desc: "Manage voter records, organize constituency-level information, coordinate voter slip preparation, and simplify election-related workflows through a centralized election management platform."
+    }
+  };
+
+  const t = content[language] || content.en;
 
   // The 8 exact feature cards from Section 8
   const softwareFeatures = [
@@ -87,13 +109,13 @@ export const ElectionSoftwareSection = ({ onOpenDemo }) => {
         {/* Section Header */}
         <div className="section-header">
           <span className="section-eyebrow">
-            CORE PRODUCT SHOWCASE
+            {t.eyebrow}
           </span>
           <h2 className="section-title">
-            Smarter Election Management Starts with Better Information.
+            {t.title}
           </h2>
           <p className="section-description">
-            Manage voter records, organize constituency-level information, coordinate voter slip preparation, and simplify election-related workflows through a centralized election management platform.
+            {t.desc}
           </p>
         </div>
 

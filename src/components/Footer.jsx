@@ -1,10 +1,88 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { MapPin, Phone, Mail, MessageCircle, ExternalLink, ShieldCheck, Smartphone, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageCircle, ShieldCheck, Smartphone } from 'lucide-react';
 
 export const Footer = ({ onOpenDemo }) => {
+  const { language } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  const content = {
+    mr: {
+      desc: "निवडणूक व्यवस्थापन सॉफ्टवेअर आणि एकात्मिक प्रचार सेवा. राजकीय नेते, उमेदवार आणि निवडणूक टीमना अचूक तंत्रज्ञानासह सक्षम बनवणे.",
+      credentials: "महाराष्ट्रातील ५००+ राजकीय नेत्यांचा विश्वास",
+      colLinks: "महत्त्वाच्या लिंक्स",
+      colServices: "आमच्या सेवा",
+      colContact: "संपर्क माहिती",
+      navHome: "मुख्यपृष्ठ",
+      navAbout: "आमच्याबद्दल",
+      navSoftware: "निवडणूक सॉफ्टवेअर",
+      navServices: "आमच्या सेवा",
+      navElections: "निवडणुका (१३ प्रकार)",
+      navContact: "संपर्क साधा",
+      demoBtn: "मोफत डेमो बुक करा →",
+      srvVoterDb: "मतदार डेटाबेस सॉफ्टवेअर",
+      srvVoterSlip: "मतदार स्लिप व्यवस्थापन",
+      srvWarRoom: "सोशल मीडिया वॉर रूम",
+      srvDigital: "डिजिटल प्रचार मोहीम",
+      srvBulkSms: "बल्क एसएमएस व व्हॉइस कॉल्स",
+      srvDocs: "राजकीय माहितीपट",
+      waBtn: "व्हॉट्सॲप वॉर रूम डेस्क",
+      copyright: `© ${currentYear} मास्टरमाइंड मीडिया. सर्व हक्क राखीव. तुमची निवडणूक, आमचा अनुभव.`,
+      privacy: "गोपनीयता धोरण (Privacy Policy)",
+      terms: "नियम व अटी (Terms)"
+    },
+    hi: {
+      desc: "चुनाव प्रबंधन सॉफ्टवेयर एवं एकीकृत प्रचार समाधान। राजनीतिक नेताओं, उम्मीदवारों और चुनाव टीमों को सटीक तकनीक से सशक्त बनाना।",
+      credentials: "महाराष्ट्र के 500+ राजनेताओं का विश्वास",
+      colLinks: "महत्वपूर्ण लिंक्स",
+      colServices: "हमारी सेवाएं",
+      colContact: "संपर्क जानकारी",
+      navHome: "होम",
+      navAbout: "हमारे बारे में",
+      navSoftware: "चुनाव सॉफ्टवेयर",
+      navServices: "हमारी सेवाएं",
+      navElections: "चुनाव (13 प्रकार)",
+      navContact: "संपर्क करें",
+      demoBtn: "फ्री डेमो बुक करें →",
+      srvVoterDb: "वोटर डेटाबेस सॉफ्टवेयर",
+      srvVoterSlip: "मतदाता पर्ची प्रबंधन",
+      srvWarRoom: "सोशल मीडिया वॉर रूम",
+      srvDigital: "डिजिटल प्रचार अभियान",
+      srvBulkSms: "बल्क एसएमएस एवं वॉयस कॉल्स",
+      srvDocs: "राजनीतिक प्रचार वृत्तचित्र",
+      waBtn: "व्हाट्सएप वॉर रूम डेस्क",
+      copyright: `© ${currentYear} मास्टरमाइंड मीडिया. सर्वाधिकार सुरक्षित। आपका चुनाव, हमारा अनुभव।`,
+      privacy: "गोपनीयता नीति (Privacy Policy)",
+      terms: "नियम एवं शर्तें (Terms)"
+    },
+    en: {
+      desc: "Election Management Software & Integrated Campaign Solutions. Empowering political leaders, candidates, and campaign teams with data precision.",
+      credentials: "500+ Political Leaders Served Across Maharashtra",
+      colLinks: "Quick Links",
+      colServices: "Our Services",
+      colContact: "Contact Information",
+      navHome: "Home",
+      navAbout: "About Us",
+      navSoftware: "Election Software",
+      navServices: "Our Services",
+      navElections: "Elections (13 Types)",
+      navContact: "Contact Us",
+      demoBtn: "Book a Free Demo →",
+      srvVoterDb: "Voter Database Software",
+      srvVoterSlip: "Voter Slip Management",
+      srvWarRoom: "Social Media War Room",
+      srvDigital: "Digital Campaigning",
+      srvBulkSms: "Bulk SMS & Voice Calls",
+      srvDocs: "Political Documentaries",
+      waBtn: "WhatsApp War Room Desk",
+      copyright: `© ${currentYear} Mastermind Media. All rights reserved. Your Election, Our Expertise.`,
+      privacy: "Privacy Policy",
+      terms: "Terms and Conditions"
+    }
+  };
+
+  const t = content[language] || content.en;
 
   return (
     <footer className="site-footer">
@@ -21,12 +99,12 @@ export const Footer = ({ onOpenDemo }) => {
             </Link>
             
             <p className="footer-brand-desc">
-              Election Management Software & Integrated Campaign Solutions. Empowering political leaders, candidates, and campaign teams with data precision.
+              {t.desc}
             </p>
 
             <div className="footer-credentials-tag">
               <ShieldCheck size={14} className="text-gold" />
-              <span>500+ Political Leaders Served Across Maharashtra</span>
+              <span>{t.credentials}</span>
             </div>
 
             <div className="footer-app-links-row">
@@ -58,21 +136,21 @@ export const Footer = ({ onOpenDemo }) => {
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="footer-col-title">Quick Links</h4>
+            <h4 className="footer-col-title">{t.colLinks}</h4>
             <ul className="footer-link-list">
-              <li><Link to="/" className="footer-link">Home</Link></li>
-              <li><Link to="/about" className="footer-link">About Us</Link></li>
-              <li><Link to="/election-software" className="footer-link">Election Software</Link></li>
-              <li><Link to="/services" className="footer-link">Our Services</Link></li>
-              <li><Link to="/elections" className="footer-link">Elections (13 Types)</Link></li>
-              <li><Link to="/contact" className="footer-link">Contact Us</Link></li>
+              <li><Link to="/" className="footer-link">{t.navHome}</Link></li>
+              <li><Link to="/about" className="footer-link">{t.navAbout}</Link></li>
+              <li><Link to="/election-software" className="footer-link">{t.navSoftware}</Link></li>
+              <li><Link to="/services" className="footer-link">{t.navServices}</Link></li>
+              <li><Link to="/elections" className="footer-link">{t.navElections}</Link></li>
+              <li><Link to="/contact" className="footer-link">{t.navContact}</Link></li>
               <li>
                 <button 
                   type="button"
                   onClick={onOpenDemo}
                   className="footer-link-highlight"
                 >
-                  Book a Free Demo →
+                  {t.demoBtn}
                 </button>
               </li>
             </ul>
@@ -80,20 +158,20 @@ export const Footer = ({ onOpenDemo }) => {
 
           {/* Col 3: Our Services */}
           <div>
-            <h4 className="footer-col-title">Our Services</h4>
+            <h4 className="footer-col-title">{t.colServices}</h4>
             <ul className="footer-link-list">
-              <li><Link to="/voter-database" className="footer-link">Voter Database Software</Link></li>
-              <li><Link to="/voter-database#slip-management" className="footer-link">Voter Slip Management</Link></li>
-              <li><Link to="/services#war-room" className="footer-link">Social Media War Room</Link></li>
-              <li><Link to="/services#digital-campaigns" className="footer-link">Digital Campaigning</Link></li>
-              <li><Link to="/services#communications" className="footer-link">Bulk SMS & Voice Calls</Link></li>
-              <li><Link to="/services#documentaries" className="footer-link">Political Documentaries</Link></li>
+              <li><Link to="/voter-database" className="footer-link">{t.srvVoterDb}</Link></li>
+              <li><Link to="/voter-database#slip-management" className="footer-link">{t.srvVoterSlip}</Link></li>
+              <li><Link to="/services" className="footer-link">{t.srvWarRoom}</Link></li>
+              <li><Link to="/services" className="footer-link">{t.srvDigital}</Link></li>
+              <li><Link to="/services" className="footer-link">{t.srvBulkSms}</Link></li>
+              <li><Link to="/services" className="footer-link">{t.srvDocs}</Link></li>
             </ul>
           </div>
 
           {/* Col 4: Contact Information */}
           <div>
-            <h4 className="footer-col-title">Contact Information</h4>
+            <h4 className="footer-col-title">{t.colContact}</h4>
             <div className="footer-contact-item">
               <MapPin size={18} className="text-royal flex-shrink-0" style={{ marginTop: '2px' }} />
               <span>404, 4th Floor, B Wing, City Vista, Kharadi, Pune – 411014, Maharashtra.</span>
@@ -122,7 +200,7 @@ export const Footer = ({ onOpenDemo }) => {
                 className="footer-wa-btn"
               >
                 <MessageCircle size={15} />
-                <span>WhatsApp War Room Desk</span>
+                <span>{t.waBtn}</span>
               </a>
             </div>
           </div>
@@ -131,13 +209,13 @@ export const Footer = ({ onOpenDemo }) => {
         {/* Legal & Copyright */}
         <div className="footer-bottom">
           <div className="footer-copyright-text">
-            © {currentYear} Mastermind Media. All rights reserved. Your Election, Our Expertise.
+            {t.copyright}
           </div>
 
           <div className="footer-legal-links">
-            <Link to="/privacy-policy" className="footer-legal-link">Privacy Policy</Link>
+            <Link to="/privacy-policy" className="footer-legal-link">{t.privacy}</Link>
             <span className="separator">•</span>
-            <Link to="/terms" className="footer-legal-link">Terms and Conditions</Link>
+            <Link to="/terms" className="footer-legal-link">{t.terms}</Link>
           </div>
         </div>
       </div>

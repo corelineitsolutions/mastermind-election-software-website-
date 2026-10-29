@@ -254,6 +254,29 @@ export const ElectionsSection = ({ onOpenDemo }) => {
     { id: 'special-council', label: language === 'mr' ? 'पदवीधर व शिक्षक मतदारसंघ' : language === 'hi' ? 'स्नातक व शिक्षक क्षेत्र' : 'Graduate & Teachers' }
   ];
 
+  const content = {
+    mr: {
+      eyebrow: "१३+ निवडणूक प्रकारांसाठी विशेष तंत्रज्ञान",
+      title: "प्रत्येक निवडणूक स्तरासाठी विशेष निवडणूक व्यवस्थापन सॉफ्टवेअर",
+      desc: "लोकसभा, विधानसभा ते थेट ग्रामपंचायत आणि पदवीधर मतदारसंघांपर्यंत, मास्टरमाइंड मीडिया प्रत्येक निवडणुकीच्या नियमांनुसार सानुकूल मतदार डेटाबेस, बूथ व्यवस्थापन आणि कार्यकर्ता ॲप्स पुरवते.",
+      btnText: "या निवडणुकीसाठी डेमो मागवा"
+    },
+    hi: {
+      eyebrow: "13+ चुनाव प्रकारों हेतु विशिष्ट तकनीक",
+      title: "प्रत्येक चुनाव स्तर के लिए विशेष चुनाव प्रबंधन सॉफ्टवेयर",
+      desc: "लोकसभा, विधानसभा से लेकर ग्राम पंचायत और विधान परिषद तक, मास्टरमाइंड मीडिया प्रत्येक चुनाव नियमों के अनुसार कस्टम वोटर डेटाबेस, बूथ प्रबंधन और कार्यकर्ता ऐप प्रदान करता है।",
+      btnText: "इस चुनाव के लिए डेमो का अनुरोध करें"
+    },
+    en: {
+      eyebrow: "13+ ELECTION TYPES SUPPORTED",
+      title: "Specialized Election Software for Every Election Level",
+      desc: "From Parliamentary general elections to local Gram Panchayats and Council constituencies, Mastermind Media provides customized voter database algorithms, booth management, and karyakarta mobile applications tailored to your election rules.",
+      btnText: "Request Demo for this Election"
+    }
+  };
+
+  const t = content[language] || content.en;
+
   const filteredElections = activeCategory === 'all' 
     ? ELECTIONS_DATA 
     : ELECTIONS_DATA.filter(item => item.category === activeCategory);
@@ -265,13 +288,13 @@ export const ElectionsSection = ({ onOpenDemo }) => {
         <div className="section-header text-center" style={{ maxWidth: '880px', margin: '0 auto 2.5rem auto' }}>
           <span className="section-eyebrow section-eyebrow-gold">
             <Sparkles size={14} />
-            13+ ELECTION TYPES SUPPORTED
+            {t.eyebrow}
           </span>
           <h2 className="section-title">
-            Specialized Election Software for Every Election Level
+            {t.title}
           </h2>
           <p className="section-description">
-            From Parliamentary general elections to local Gram Panchayats and Council constituencies, Mastermind Media provides customized voter database algorithms, booth management, and karyakarta mobile applications tailored to your election rules.
+            {t.desc}
           </p>
         </div>
 
@@ -351,7 +374,7 @@ export const ElectionsSection = ({ onOpenDemo }) => {
                       onClick={onOpenDemo}
                       className="btn btn-primary election-card-demo-btn"
                     >
-                      <span>Request Demo for this Election</span>
+                      <span>{t.btnText}</span>
                       <ArrowRight size={15} />
                     </button>
                   </div>

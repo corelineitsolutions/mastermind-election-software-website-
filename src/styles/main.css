@@ -5295,13 +5295,113 @@ html, body {
     font-size: 1.22rem !important;
   }
 
+  /* Integrated Services — 3 cards in one row on mobile (NO detailed description) */
   .services-showcase-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 2rem !important;
   }
 
   .service-solution-card {
-    border-radius: 16px !important;
+    border-radius: 12px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    background: #FFFFFF !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  .service-solution-card:active {
+    transform: scale(0.96) !important;
+    border-color: #EA580C !important;
+  }
+
+  .service-card-visual {
+    position: relative !important;
+    width: 100% !important;
+    height: 72px !important;
+    border-bottom: 1px solid #FED7AA !important;
+    background: #FFF7ED !important;
+  }
+
+  .service-card-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .service-card-badge {
+    position: absolute !important;
+    top: 4px !important;
+    left: 4px !important;
+    font-size: 0.48rem !important;
+    font-weight: 800 !important;
+    padding: 0.15rem 0.35rem !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.01em !important;
+    max-width: 90% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+    line-height: 1 !important;
+  }
+
+  .service-card-content {
+    padding: 0.45rem 0.3rem 0.55rem 0.3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: flex-start !important;
+    flex: 1 !important;
+  }
+
+  .service-title-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+  }
+
+  .service-mini-icon {
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+    border-radius: 6px !important;
+  }
+
+  .service-mini-icon svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .service-title {
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin: 0 !important;
+    text-align: center !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* User requirement: dont take the detailed discription in the mobile phone update */
+  .service-description-text {
+    display: none !important;
+  }
+
+  .service-card-action {
+    display: none !important;
   }
 
   .benefits-grid {

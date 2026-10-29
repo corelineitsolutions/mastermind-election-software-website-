@@ -15,6 +15,62 @@ import {
 export const HeroSection = ({ onOpenDemo }) => {
   const { language } = useLanguage();
 
+  const content = {
+    mr: {
+      eyebrow: 'महाराष्ट्र व अखिल भारतीय निवडणूक तंत्रज्ञान',
+      headlinePrefix: 'तुमची निवडणूक,',
+      headlineHighlight: 'आमचा अनुभव.',
+      subheadline: 'स्मार्ट निवडणूक सॉफ्टवेअर आणि प्रगत प्रचार व्यवस्थापनाद्वारे राजकीय नेतृत्वाला सशक्त बनवणे.',
+      paragraph: 'मास्टरमाइंड मीडिया राजकीय नेत्यांना प्रचार मोहीम अधिक कार्यक्षमतेने चालवण्यासाठी सर्वसमावेशक निवडणूक व्यवस्थापन सॉफ्टवेअर, मतदार डेटाबेस आणि डिजिटल प्रचार सेवा पुरवते.',
+      ctaServices: 'आमच्या सेवा पहा',
+      ctaConsult: 'सल्लामसलत बुक करा',
+      ctaContact: 'तज्ज्ञांशी संपर्क साधा',
+      trustLeaders: '५००+ राजकीय नेत्यांचा विश्वास',
+      trustVault: '१००% सुरक्षित खाजगी वॉल्ट',
+      trustHq: 'मुख्यालय पुणे, महाराष्ट्र',
+      float1Title: 'अतिजलद मतदार शोध',
+      float1Sub: 'मराठी व इंग्रजी भाषा',
+      float2Title: 'कार्यकर्ता मोबाईल ॲप',
+      float2Sub: 'Android व iOS सपोर्ट'
+    },
+    hi: {
+      eyebrow: 'महाराष्ट्र एवं अखिल भारतीय चुनाव प्रौद्योगिकी',
+      headlinePrefix: 'आपका चुनाव,',
+      headlineHighlight: 'हमारा अनुभव।',
+      subheadline: 'स्मार्ट चुनाव सॉफ्टवेयर और उन्नत प्रचार प्रबंधन द्वारा राजनीतिक नेतृत्व को सशक्त बनाना।',
+      paragraph: 'मास्टरमाइंड मीडिया राजनीतिक नेताओं को उनके प्रचार अभियान को सुव्यवस्थित करने के लिए व्यापक चुनाव प्रबंधन सॉफ्टवेयर, वोटर डेटाबेस और डिजिटल प्रचार सेवाएं प्रदान करता है।',
+      ctaServices: 'हमारी सेवाएं देखें',
+      ctaConsult: 'परामर्श बुक करें',
+      ctaContact: 'विशेषज्ञों से संपर्क करें',
+      trustLeaders: '500+ राजनेताओं का विश्वास',
+      trustVault: '100% सुरक्षित निजी वॉल्ट',
+      trustHq: 'मुख्यालय पुणे, महाराष्ट्र',
+      float1Title: 'त्वरित मतदाता खोज',
+      float1Sub: 'हिंदी एवं अंग्रेज़ी',
+      float2Title: 'कार्यकर्ता मोबाइल ऐप',
+      float2Sub: 'Android एवं iOS सपोर्ट'
+    },
+    en: {
+      eyebrow: 'Maharashtra & Pan-India Election Technology',
+      headlinePrefix: 'Your Election,',
+      headlineHighlight: 'Our Expertise.',
+      subheadline: 'Empowering Political Leaders with Smart Election Software & Advanced Campaign Management Solutions.',
+      paragraph: 'Mastermind Media provides comprehensive election management software, voter database solutions, and digital campaign services to help political leaders manage their campaigns efficiently.',
+      ctaServices: 'Explore Our Services',
+      ctaConsult: 'Book Consultation',
+      ctaContact: 'Contact Experts',
+      trustLeaders: '500+ Leaders Served',
+      trustVault: '100% Private Vaults',
+      trustHq: 'Headquartered in Pune',
+      float1Title: 'Instant Voter Search',
+      float1Sub: 'English & Devanagari',
+      float2Title: 'Karyakarta Mobile App',
+      float2Sub: 'Android & iOS Ready'
+    }
+  };
+
+  const t = content[language] || content.en;
+
   return (
     <section className="hero-section-premium" id="hero">
       {/* Official 1920x1080 Polling Booth Background Image (back 01.jpg.jpeg) */}
@@ -36,26 +92,20 @@ export const HeroSection = ({ onOpenDemo }) => {
           <div className="hero-content-col">
             <div className="hero-eyebrow-badge">
               <span className="badge-dot" />
-              <span className="badge-text">
-                {language === 'mr' 
-                  ? 'महाराष्ट्र व अखिल भारतीय निवडणूक तंत्रज्ञान' 
-                  : language === 'hi'
-                  ? 'महाराष्ट्र एवं अखिल भारतीय चुनाव प्रौद्योगिकी'
-                  : 'Maharashtra & Pan-India Election Technology'}
-              </span>
+              <span className="badge-text">{t.eyebrow}</span>
             </div>
 
             <h1 className="hero-primary-headline">
-              <span className="hero-headline-line">Your Election,</span>{' '}
-              <span className="headline-highlight hero-headline-line">Our Expertise.</span>
+              <span className="hero-headline-line">{t.headlinePrefix}</span>{' '}
+              <span className="headline-highlight hero-headline-line">{t.headlineHighlight}</span>
             </h1>
 
             <h2 className="hero-subheadline-text">
-              Empowering Political Leaders with Smart Election Software & Advanced Campaign Management Solutions.
+              {t.subheadline}
             </h2>
 
             <p className="hero-supporting-paragraph">
-              Mastermind Media provides comprehensive election management software, voter database solutions, and digital campaign services to help political leaders manage their campaigns efficiently.
+              {t.paragraph}
             </p>
 
             {/* 3 Primary Action Buttons */}
@@ -64,7 +114,7 @@ export const HeroSection = ({ onOpenDemo }) => {
                 to="/services" 
                 className="btn btn-primary hero-btn-compact hero-cta-primary"
               >
-                <span>Explore Our Services</span>
+                <span>{t.ctaServices}</span>
                 <ArrowRight size={15} />
               </Link>
 
@@ -74,7 +124,7 @@ export const HeroSection = ({ onOpenDemo }) => {
                 className="btn btn-outline-royal hero-btn-compact hero-cta-secondary"
               >
                 <Calendar size={15} />
-                <span>Book Consultation</span>
+                <span>{t.ctaConsult}</span>
               </button>
 
               <Link 
@@ -82,7 +132,7 @@ export const HeroSection = ({ onOpenDemo }) => {
                 className="btn btn-secondary hero-btn-compact hero-cta-tertiary"
               >
                 <PhoneCall size={15} />
-                <span>Contact Experts</span>
+                <span>{t.ctaContact}</span>
               </Link>
             </div>
 
@@ -90,17 +140,17 @@ export const HeroSection = ({ onOpenDemo }) => {
             <div className="hero-trust-indicators-row">
               <div className="hero-trust-item">
                 <Award size={15} className="trust-icon" />
-                <span className="trust-text"><strong>500+</strong> Leaders Served</span>
+                <span className="trust-text">{t.trustLeaders}</span>
               </div>
               <div className="trust-separator">•</div>
               <div className="hero-trust-item">
                 <ShieldCheck size={15} className="trust-icon" />
-                <span className="trust-text"><strong>100%</strong> Private Vaults</span>
+                <span className="trust-text">{t.trustVault}</span>
               </div>
               <div className="trust-separator">•</div>
               <div className="hero-trust-item">
                 <MapPin size={15} className="trust-icon" />
-                <span className="trust-text">Headquartered in <strong>Pune</strong></span>
+                <span className="trust-text">{t.trustHq}</span>
               </div>
             </div>
           </div>
@@ -117,8 +167,8 @@ export const HeroSection = ({ onOpenDemo }) => {
                   <Sparkles size={14} />
                 </div>
                 <div className="float-tag-content">
-                  <span className="float-tag-title">Instant Voter Search</span>
-                  <span className="float-tag-sub">English & Devanagari</span>
+                  <span className="float-tag-title">{t.float1Title}</span>
+                  <span className="float-tag-sub">{t.float1Sub}</span>
                 </div>
               </div>
 
@@ -138,8 +188,8 @@ export const HeroSection = ({ onOpenDemo }) => {
                   <Smartphone size={14} />
                 </div>
                 <div className="float-tag-content">
-                  <span className="float-tag-title">Karyakarta Mobile App</span>
-                  <span className="float-tag-sub">Android & iOS Ready</span>
+                  <span className="float-tag-title">{t.float2Title}</span>
+                  <span className="float-tag-sub">{t.float2Sub}</span>
                 </div>
               </div>
             </div>
