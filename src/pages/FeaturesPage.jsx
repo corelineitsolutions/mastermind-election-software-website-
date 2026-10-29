@@ -14,7 +14,7 @@ export const FeaturesPage = ({ onOpenDemo }) => {
           <span className="section-eyebrow">
             COMPREHENSIVE FEATURE SUITE
           </span>
-          <h1 className="section-title" style={{ fontSize: '3rem' }}>
+          <h1 className="page-hero-title">
             Everything You Need to Power Your Election War Room
           </h1>
           <p className="section-description">

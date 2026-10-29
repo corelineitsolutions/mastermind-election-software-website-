@@ -14,7 +14,7 @@ export const SolutionsPage = ({ onOpenDemo }) => {
           <span className="section-eyebrow">
             CONSTITUENCY-SPECIFIC SOLUTIONS
           </span>
-          <h1 className="section-title" style={{ fontSize: '3rem' }}>
+          <h1 className="page-hero-title">
             Tailored Election Software for Every Democratic Tier
           </h1>
           <p className="section-description">

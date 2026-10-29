@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { DemoModal } from './components/DemoModal';
+import { WhatsAppButton } from './components/WhatsAppButton';
 
 // Architecture Pages
 import { HomePage } from './pages/HomePage';
@@ -86,6 +87,9 @@ export function App() {
 
       {/* Global Footer */}
       <Footer onOpenDemo={handleOpenDemo} />
+
+      {/* Floating Fixed WhatsApp Action Button */}
+      <WhatsAppButton />
 
       {/* Demo Booking Modal */}
       <DemoModal

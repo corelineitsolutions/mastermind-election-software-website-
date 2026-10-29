@@ -13,7 +13,7 @@ export const HowItWorksPage = ({ onOpenDemo }) => {
           <span className="section-eyebrow">
             PROVEN IMPLEMENTATION METHODOLOGY
           </span>
-          <h1 className="section-title" style={{ fontSize: '3rem' }}>
+          <h1 className="page-hero-title">
             From Electoral Rolls to an Active War Room
           </h1>
           <p className="section-description">

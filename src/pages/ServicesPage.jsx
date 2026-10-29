@@ -22,7 +22,7 @@ export const ServicesPage = ({ onOpenDemo }) => {
           <span className="section-eyebrow section-eyebrow-gold" style={{ marginBottom: '1rem' }}>
             INTEGRATED POLITICAL SERVICES
           </span>
-          <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', fontWeight: 900, lineHeight: 1.15, marginBottom: '1.25rem' }}>
+          <h1 className="page-hero-title">
             Comprehensive Political Campaign Solutions Across Maharashtra
           </h1>
           <p style={{ fontSize: '1.15rem', color: '#D1D5DB', lineHeight: 1.65, maxWidth: '760px', margin: '0 auto 2rem auto' }}>

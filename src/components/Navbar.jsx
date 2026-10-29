@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { Menu, X, ArrowRight, Phone } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone, MessageCircle } from 'lucide-react';
 
 export const Navbar = ({ onOpenDemo }) => {
   const { language, setLanguage, t } = useLanguage();
@@ -21,6 +21,18 @@ export const Navbar = ({ onOpenDemo }) => {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
+
+  // Prevent background scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   // Main taskbar links matching exact website architecture
   const navLinks = [
@@ -176,6 +188,17 @@ export const Navbar = ({ onOpenDemo }) => {
               <span>{t('nav.bookDemo')}</span>
               <ArrowRight size={16} />
             </button>
+
+            <a
+              href="https://wa.me/919604001344?text=Hello%20Mastermind%20Media%20Team%2C%20I%20would%20like%20to%20discuss%20election%20software%20and%20campaign%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-white"
+              style={{ width: '100%', border: '1px solid #25D366', color: '#128C7E', justifyContent: 'center', background: '#F0FDF4' }}
+            >
+              <MessageCircle size={16} color="#25D366" />
+              <span>WhatsApp: +91 96040 01344</span>
+            </a>
 
             <a
               href="tel:+919604001344"
