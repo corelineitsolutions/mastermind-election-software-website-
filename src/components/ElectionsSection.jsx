@@ -277,6 +277,39 @@ export const ElectionsSection = ({ onOpenDemo }) => {
 
   const t = content[language] || content.en;
 
+  const electionTitles = {
+    mr: {
+      'lok-sabha': 'लोकसभा निवडणूक',
+      'rajya-sabha': 'राज्यसभा निवडणूक',
+      'vidhan-sabha': 'विधानसभा निवडणूक',
+      'vidhan-parishad': 'विधान परिषद निवडणूक',
+      'mahanagarpalika': 'महानगरपालिका निवडणूक',
+      'nagar-parishad': 'नगरपरिषद निवडणूक',
+      'nagar-panchayat': 'नगर पंचायत निवडणूक',
+      'municipal-ward': 'प्रभाग / वॉर्ड निवडणूक',
+      'zilla-parishad': 'जिल्हा परिषद निवडणूक',
+      'panchayat-samiti': 'पंचायत समिती निवडणूक',
+      'gram-panchayat': 'ग्रामपंचायत निवडणूक',
+      'graduate-constituency': 'पदवीधर मतदारसंघ',
+      'teachers-constituency': 'शिक्षक मतदारसंघ'
+    },
+    hi: {
+      'lok-sabha': 'लोकसभा चुनाव',
+      'rajya-sabha': 'राज्यसभा चुनाव',
+      'vidhan-sabha': 'विधानसभा चुनाव',
+      'vidhan-parishad': 'विधान परिषद चुनाव',
+      'mahanagarpalika': 'नगर निगम चुनाव',
+      'nagar-parishad': 'नगर परिषद चुनाव',
+      'nagar-panchayat': 'नगर पंचायत चुनाव',
+      'municipal-ward': 'वार्ड / प्रभाग चुनाव',
+      'zilla-parishad': 'जिला परिषद चुनाव',
+      'panchayat-samiti': 'पंचायत समिति चुनाव',
+      'gram-panchayat': 'ग्राम पंचायत चुनाव',
+      'graduate-constituency': 'स्नातक निर्वाचन क्षेत्र',
+      'teachers-constituency': 'शिक्षक निर्वाचन क्षेत्र'
+    }
+  };
+
   const filteredElections = activeCategory === 'all' 
     ? ELECTIONS_DATA 
     : ELECTIONS_DATA.filter(item => item.category === activeCategory);
@@ -316,9 +349,17 @@ export const ElectionsSection = ({ onOpenDemo }) => {
         <div className="elections-cards-grid">
           {filteredElections.map((election) => {
             const Icon = election.icon;
+            const title = (electionTitles[language] && electionTitles[language][election.id]) || election.title;
 
             return (
-              <div key={election.id} className="election-software-card">
+              <div 
+                key={election.id} 
+                className="election-software-card"
+                onClick={onOpenDemo}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if ((e.key === 'Enter' || e.key === ' ') && onOpenDemo) onOpenDemo(); }}
+              >
                 {/* Card Header Background Image of Respective Election Type */}
                 <div 
                   className="election-card-header-bg"
@@ -330,8 +371,7 @@ export const ElectionsSection = ({ onOpenDemo }) => {
                     <div className="election-icon-box">
                       <Icon size={22} />
                     </div>
-                    {/* Only the English Name, strictly no Marathi name and no description badge */}
-                    <h3 className="election-card-title">{election.title}</h3>
+                    <h3 className="election-card-title">{title}</h3>
                   </div>
                 </div>
 

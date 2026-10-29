@@ -5166,13 +5166,98 @@ input, select, textarea {
 }
 
 @media (max-width: 768px) {
+  /* 13 Election Types — 3 cards in one row on mobile (NO detailed description) */
   .elections-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 2rem !important;
   }
 
   .election-software-card {
-    padding: 0;
+    border-radius: 12px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    background: #FFFFFF !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  .election-software-card:active {
+    transform: scale(0.96) !important;
+    border-color: #EA580C !important;
+  }
+
+  .election-card-header-bg {
+    position: relative !important;
+    width: 100% !important;
+    height: 85px !important;
+    padding: 0.35rem 0.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .election-header-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.9) 100%) !important;
+    z-index: 1 !important;
+  }
+
+  .election-header-content {
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.2rem !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .election-icon-box {
+    width: 1.45rem !important;
+    height: 1.45rem !important;
+    border-radius: 6px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #EA580C !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .election-icon-box svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .election-card-title {
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    text-align: center !important;
+    margin: 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95) !important;
+  }
+
+  .election-card-body {
+    display: none !important;
   }
 
   .advisory-cta {
@@ -5404,14 +5489,84 @@ html, body {
     display: none !important;
   }
 
+  /* Why Choose Us — 3 cards in one row on mobile (NO detailed description) */
   .benefits-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.75rem !important;
   }
 
   .benefit-card {
-    padding: 1.35rem 1.15rem !important;
-    border-radius: 16px !important;
+    border-radius: 12px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    padding: 0.55rem 0.35rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+    min-height: 85px !important;
+  }
+
+  .benefit-card:active {
+    transform: scale(0.96) !important;
+    border-color: #EA580C !important;
+  }
+
+  .benefit-card-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.15rem !important;
+    margin-bottom: 0.25rem !important;
+    width: 100% !important;
+  }
+
+  .benefit-icon-box {
+    width: 1.65rem !important;
+    height: 1.65rem !important;
+    border-radius: 7px !important;
+    background: #FFF7ED !important;
+    color: #EA580C !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .benefit-icon-box svg,
+  .benefit-icon {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .benefit-num-tag {
+    font-size: 0.6rem !important;
+    font-weight: 800 !important;
+    color: #94A3B8 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .benefit-card-title {
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin: 0 !important;
+    text-align: center !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .benefit-card-desc {
+    display: none !important;
   }
 
   .team-gallery-grid {
@@ -5423,13 +5578,79 @@ html, body {
     padding: 1.25rem !important;
   }
 
+  /* Core Election Software Features — 3 cards in one row on mobile (NO detailed description) */
   .software-features-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 2rem !important;
   }
 
   .software-feature-card {
-    padding: 1.25rem 1.15rem !important;
+    border-radius: 12px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    padding: 0.55rem 0.35rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+    min-height: 85px !important;
+  }
+
+  .software-feature-card:active {
+    transform: scale(0.96) !important;
+    border-color: #EA580C !important;
+  }
+
+  .feat-card-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 0.25rem !important;
+    width: 100% !important;
+  }
+
+  .feat-icon-wrap {
+    width: 1.65rem !important;
+    height: 1.65rem !important;
+    border-radius: 7px !important;
+    background: #FFF7ED !important;
+    color: #EA580C !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .feat-icon-wrap svg,
+  .feat-icon {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .feat-status-pill {
+    display: none !important;
+  }
+
+  .feat-card-title {
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    margin: 0 !important;
+    text-align: center !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .feat-card-desc {
+    display: none !important;
   }
 }
 

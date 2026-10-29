@@ -9,7 +9,7 @@ import {
   Headphones
 } from 'lucide-react';
 
-export const WhyChooseUs = () => {
+export const WhyChooseUs = ({ onOpenDemo }) => {
   const { language } = useLanguage();
 
   const content = {
@@ -185,7 +185,14 @@ export const WhyChooseUs = () => {
           {t.benefits.map((b) => {
             const Icon = b.icon;
             return (
-              <div key={b.id} className="benefit-card">
+              <div 
+                key={b.id} 
+                className="benefit-card"
+                onClick={onOpenDemo}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if ((e.key === 'Enter' || e.key === ' ') && onOpenDemo) onOpenDemo(); }}
+              >
                 <div className="benefit-card-top">
                   <div className="benefit-icon-box">
                     <Icon size={24} className="benefit-icon" />

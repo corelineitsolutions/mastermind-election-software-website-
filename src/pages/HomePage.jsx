@@ -32,7 +32,7 @@ export const HomePage = ({ onOpenDemo }) => {
       <AboutSection />
 
       {/* 7. Why Choose Mastermind Media? (Section 11) */}
-      <WhyChooseUs />
+      <WhyChooseUs onOpenDemo={onOpenDemo} />
 
       {/* 8. 13+ Supported Election Software Solutions */}
       <ElectionsSection onOpenDemo={onOpenDemo} />

@@ -43,6 +43,29 @@ export const ElectionSoftwareSection = ({ onOpenDemo }) => {
 
   const t = content[language] || content.en;
 
+  const featureTitles = {
+    mr: {
+      1: 'मतदार डेटाबेस व्यवस्थापन',
+      2: 'प्रभाग व केंद्र रचना',
+      3: 'अचूक मतदार शोध व फिल्टर्स',
+      4: 'मतदार स्लिप प्रिंटिंग',
+      5: 'डेटा आयात व निर्यात',
+      6: 'कार्यकर्ता समन्वय',
+      7: 'सुरक्षित प्रवेश अधिकार',
+      8: 'थेट मतदान अहवाल'
+    },
+    hi: {
+      1: 'मतदाता डेटाबेस प्रबंधन',
+      2: 'वार्ड एवं बूथ संगठन',
+      3: 'उन्नत वोटर सर्च',
+      4: 'वोटर पर्ची प्रिंटिंग',
+      5: 'डेटा आयात एवं निर्यात',
+      6: 'कार्यकर्ता समन्वय',
+      7: 'उपयोगकर्ता सुरक्षा',
+      8: 'लाइव रिपोर्टिंग'
+    }
+  };
+
   // The 8 exact feature cards from Section 8
   const softwareFeatures = [
     {
@@ -123,15 +146,23 @@ export const ElectionSoftwareSection = ({ onOpenDemo }) => {
         <div className="software-features-grid">
           {softwareFeatures.map((feat) => {
             const Icon = feat.icon;
+            const title = (featureTitles[language] && featureTitles[language][feat.id]) || feat.title;
             return (
-              <div key={feat.id} className="software-feature-card">
+              <div 
+                key={feat.id} 
+                className="software-feature-card"
+                onClick={onOpenDemo}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if ((e.key === 'Enter' || e.key === ' ') && onOpenDemo) onOpenDemo(); }}
+              >
                 <div className="feat-card-header">
                   <div className="feat-icon-wrap">
                     <Icon size={22} className="feat-icon" />
                   </div>
                   <span className="feat-status-pill">{feat.status}</span>
                 </div>
-                <h3 className="feat-card-title">{feat.title}</h3>
+                <h3 className="feat-card-title">{title}</h3>
                 <p className="feat-card-desc">{feat.desc}</p>
               </div>
             );
