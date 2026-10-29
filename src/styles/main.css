@@ -2379,12 +2379,12 @@ input, select, textarea {
 .hero-phones-showcase-wrap {
   position: relative;
   width: 100%;
-  max-width: 580px;
+  max-width: 660px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 
 .hero-phones-glow {
@@ -2392,19 +2392,19 @@ input, select, textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.22) 0%, rgba(251, 146, 60, 0.24) 48%, transparent 72%);
-  filter: blur(36px);
+  filter: blur(40px);
   z-index: 0;
   pointer-events: none;
 }
 
-/* Hero 4-Theme Carousel Stage */
+/* Hero 4-Theme Showcase Stage (30% size increase from 440px -> 572px) */
 .hero-carousel-stage {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 572px;
   aspect-ratio: 471 / 530;
   display: flex;
   align-items: center;
@@ -2422,9 +2422,9 @@ input, select, textarea {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s;
-  transform: scale(0.96);
+  transform: scale(0.97);
   pointer-events: none;
-  filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.52)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.32));
+  filter: drop-shadow(0 24px 42px rgba(0, 0, 0, 0.55)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.32));
 }
 
 .hero-carousel-img.active {
@@ -2433,40 +2433,6 @@ input, select, textarea {
   transform: scale(1);
   pointer-events: auto;
   z-index: 2;
-}
-
-.hero-carousel-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  margin-top: 0.85rem;
-  position: relative;
-  z-index: 4;
-}
-
-.hero-dot-btn {
-  width: 10px;
-  height: 10px;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1.5px solid rgba(255, 255, 255, 0.65);
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0;
-  outline: none;
-}
-
-.hero-dot-btn:hover {
-  background: rgba(255, 255, 255, 0.75);
-  transform: scale(1.15);
-}
-
-.hero-dot-btn.active {
-  width: 26px;
-  background: var(--dot-color, #EA580C);
-  border-color: #FFFFFF;
-  box-shadow: 0 0 14px var(--dot-color, rgba(234, 88, 12, 0.8));
 }
 
 .hero-phones-img {
@@ -5791,16 +5757,13 @@ html, body {
   }
 
   .hero-carousel-stage {
-    max-width: 290px !important;
+    max-width: 377px !important;
+    width: 92% !important;
     margin: 0 auto !important;
   }
 
   .hero-carousel-img {
-    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.42)) !important;
-  }
-
-  .hero-carousel-dots {
-    margin-top: 0.5rem !important;
+    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.45)) !important;
   }
 
   .hero-phones-img {

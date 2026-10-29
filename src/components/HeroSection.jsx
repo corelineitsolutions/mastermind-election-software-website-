@@ -235,20 +235,6 @@ export const HeroSection = ({ onOpenDemo }) => {
                 ))}
               </div>
 
-              {/* Theme Cycle Indicator Dots */}
-              <div className="hero-carousel-dots" role="tablist" aria-label="Hero Theme Selector">
-                {HERO_THEMES.map((theme, idx) => (
-                  <button
-                    key={theme.id}
-                    type="button"
-                    onClick={() => setCurrentThemeIndex(idx)}
-                    className={`hero-dot-btn ${idx === currentThemeIndex ? 'active' : ''}`}
-                    style={{ '--dot-color': theme.color }}
-                    aria-label={`Select ${theme.name}`}
-                  />
-                ))}
-              </div>
-
               {/* Floating Feature Badge 2: Bottom Left */}
               <div className="hero-float-tag hero-float-bottom">
                 <div className="float-icon-bubble">
