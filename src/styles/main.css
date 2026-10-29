@@ -4,7 +4,9 @@
 /* =========================================================================
    GLOBAL RESET & TYPOGRAPHY
    ========================================================================= */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -21,7 +23,8 @@ html {
 }
 
 /* Devanagari specific font enhancement when lang is hi or mr */
-html[lang="hi"], html[lang="mr"],
+html[lang="hi"],
+html[lang="mr"],
 .font-devanagari {
   font-family: var(--font-devanagari);
 }
@@ -53,12 +56,15 @@ button {
   outline: none;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
 }
 
@@ -188,13 +194,17 @@ input, select, textarea {
   font-size: 1.0625rem;
 }
 
-.btn-primary, .btn-royal, .btn-orange {
+.btn-primary,
+.btn-royal,
+.btn-orange {
   background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
   color: #FFFFFF;
   box-shadow: 0 8px 20px -4px rgba(234, 88, 12, 0.38);
 }
 
-.btn-primary:hover, .btn-royal:hover, .btn-orange:hover {
+.btn-primary:hover,
+.btn-royal:hover,
+.btn-orange:hover {
   background: #C2410C;
   transform: translateY(-2px);
   box-shadow: 0 12px 24px -4px rgba(234, 88, 12, 0.52);
@@ -227,13 +237,15 @@ input, select, textarea {
   box-shadow: 0 12px 20px -4px rgba(234, 88, 12, 0.55);
 }
 
-.btn-outline-royal, .btn-outline-orange {
+.btn-outline-royal,
+.btn-outline-orange {
   background: #FFFFFF;
   color: #EA580C;
   border: 1.5px solid #EA580C;
 }
 
-.btn-outline-royal:hover, .btn-outline-orange:hover {
+.btn-outline-royal:hover,
+.btn-outline-orange:hover {
   background: #FFF7ED;
   border-color: #C2410C;
   color: #C2410C;
@@ -441,10 +453,12 @@ input, select, textarea {
 }
 
 @media (max-width: 1024px) {
+
   .nav-menu-desktop,
   .btn-login-nav {
     display: none;
   }
+
   .mobile-toggle-btn {
     display: flex;
   }
@@ -454,9 +468,11 @@ input, select, textarea {
   .btn-navbar-cta {
     display: none !important;
   }
+
   .header-inner {
     height: 3.75rem;
   }
+
   .brand-logo-img {
     height: 2.15rem;
     max-width: 140px;
@@ -468,10 +484,12 @@ input, select, textarea {
     height: 1.95rem;
     max-width: 125px;
   }
+
   .lang-btn {
     padding: 0.25rem 0.45rem;
     font-size: 0.7rem;
   }
+
   .mobile-toggle-btn {
     width: 2.35rem;
     height: 2.35rem;
@@ -505,8 +523,15 @@ input, select, textarea {
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-nav-link {
@@ -929,9 +954,18 @@ input, select, textarea {
   height: 0.65rem;
   border-radius: 50%;
 }
-.hero-dot-red { background: #EF4444; }
-.hero-dot-yellow { background: #F59E0B; }
-.hero-dot-green { background: #10B981; }
+
+.hero-dot-red {
+  background: #EF4444;
+}
+
+.hero-dot-yellow {
+  background: #F59E0B;
+}
+
+.hero-dot-green {
+  background: #10B981;
+}
 
 .hero-product-title-tag {
   color: #9CA3AF;
@@ -972,8 +1006,15 @@ input, select, textarea {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1275,7 +1316,10 @@ input, select, textarea {
   overflow-x: auto;
   scrollbar-width: none;
 }
-.showcase-tab-bar::-webkit-scrollbar { display: none; }
+
+.showcase-tab-bar::-webkit-scrollbar {
+  display: none;
+}
 
 .showcase-tab-btn {
   display: flex;
@@ -1408,9 +1452,21 @@ input, select, textarea {
   font-size: 0.75rem;
   font-weight: 700;
 }
-.status-favorable { background: #DCFCE7; color: #15803D; }
-.status-neutral { background: #FEF3C7; color: #B45309; }
-.status-opposed { background: #FEE2E2; color: #B91C1C; }
+
+.status-favorable {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.status-neutral {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.status-opposed {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
 
 /* =========================================================================
    ELECTION SOLUTIONS TIERS
@@ -1859,7 +1915,9 @@ input, select, textarea {
   color: var(--color-navy-dark);
 }
 
-.form-input, .form-select, .form-textarea {
+.form-input,
+.form-select,
+.form-textarea {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
@@ -1870,13 +1928,16 @@ input, select, textarea {
   transition: all var(--transition-fast);
 }
 
-.form-input:focus, .form-select:focus, .form-textarea:focus {
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
   border-color: var(--color-orange-bright);
   background: var(--color-bg-white);
   box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.15);
 }
 
-.form-input.error, .form-select.error {
+.form-input.error,
+.form-select.error {
   border-color: #EF4444;
 }
 
@@ -1948,13 +2009,25 @@ input, select, textarea {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes zoomIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* =========================================================================
@@ -2098,11 +2171,25 @@ input, select, textarea {
    ========================================================================= */
 
 /* Typography & Utility Colors */
-.text-royal { color: var(--color-royal-blue) !important; }
-.text-gold { color: var(--color-gold) !important; }
-.text-navy { color: var(--color-navy-dark) !important; }
-.text-success { color: var(--color-success) !important; }
-.text-muted { color: var(--color-text-muted) !important; }
+.text-royal {
+  color: var(--color-royal-blue) !important;
+}
+
+.text-gold {
+  color: var(--color-gold) !important;
+}
+
+.text-navy {
+  color: var(--color-navy-dark) !important;
+}
+
+.text-success {
+  color: var(--color-success) !important;
+}
+
+.text-muted {
+  color: var(--color-text-muted) !important;
+}
 
 /* 1. HERO SECTION (SECTION 5) - POLISHED & BALANCED COMPOSITION */
 .hero-section-premium {
@@ -2116,7 +2203,7 @@ input, select, textarea {
   --color-navy-surface: #182544;
   --color-border-accent: rgba(36, 87, 214, 0.18);
   --color-gold: #FFD700;
-  
+
   position: relative;
   padding-top: 4rem;
   padding-bottom: 4.25rem;
@@ -2154,13 +2241,11 @@ input, select, textarea {
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(10, 17, 36, 0.88) 0%,
-    rgba(10, 17, 36, 0.72) 42%,
-    rgba(16, 27, 53, 0.34) 74%,
-    rgba(16, 27, 53, 0.48) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(10, 17, 36, 0.88) 0%,
+      rgba(10, 17, 36, 0.72) 42%,
+      rgba(16, 27, 53, 0.34) 74%,
+      rgba(16, 27, 53, 0.48) 100%);
   pointer-events: none;
 }
 
@@ -2183,8 +2268,8 @@ input, select, textarea {
 
 .hero-two-column-grid {
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 2.75rem;
+  grid-template-columns: 1fr 1.06fr;
+  gap: 2.25rem;
   align-items: center;
 }
 
@@ -2217,9 +2302,12 @@ input, select, textarea {
 }
 
 @keyframes pulseDot {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.35);
   }
+
   50% {
     box-shadow: 0 0 0 6px rgba(234, 88, 12, 0.15);
   }
@@ -2379,12 +2467,12 @@ input, select, textarea {
 .hero-phones-showcase-wrap {
   position: relative;
   width: 100%;
-  max-width: 660px;
+  max-width: 740px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .hero-phones-glow {
@@ -2400,11 +2488,11 @@ input, select, textarea {
   pointer-events: none;
 }
 
-/* Hero 4-Theme Showcase Stage (30% size increase from 440px -> 572px) */
+/* Hero 4-Theme Showcase Stage (Enlarged prominent hero view) */
 .hero-carousel-stage {
   position: relative;
   width: 100%;
-  max-width: 572px;
+  max-width: 670px;
   aspect-ratio: 471 / 530;
   display: flex;
   align-items: center;
@@ -2424,7 +2512,7 @@ input, select, textarea {
   transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s;
   transform: scale(0.97);
   pointer-events: none;
-  filter: drop-shadow(0 24px 42px rgba(0, 0, 0, 0.55)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.32));
+  filter: drop-shadow(0 26px 46px rgba(0, 0, 0, 0.58)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
 }
 
 .hero-carousel-img.active {
@@ -2484,8 +2572,15 @@ input, select, textarea {
 }
 
 @keyframes floatBadge {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .float-icon-bubble {
@@ -2570,9 +2665,17 @@ input, select, textarea {
   border-radius: 50%;
 }
 
-.window-dots .dot.red { background: #EF4444; }
-.window-dots .dot.yellow { background: #F59E0B; }
-.window-dots .dot.green { background: #10B981; }
+.window-dots .dot.red {
+  background: #EF4444;
+}
+
+.window-dots .dot.yellow {
+  background: #F59E0B;
+}
+
+.window-dots .dot.green {
+  background: #10B981;
+}
 
 .dashboard-title-pill {
   display: inline-flex;
@@ -2790,12 +2893,35 @@ input, select, textarea {
   border-radius: 9999px;
 }
 
-.status-badge.slip-printed { background: #ECFDF5; color: #059669; }
-.status-badge.slip-distributed { background: #EFF6FF; color: #2563EB; }
-.status-badge.slip-generated { background: #F3E8FF; color: #7C3AED; }
-.status-badge.contact-contacted { background: #ECFDF5; color: #059669; }
-.status-badge.contact-verified { background: #EFF6FF; color: #1D4ED8; }
-.status-badge.contact-follow-up { background: #FFFBEB; color: #D97706; }
+.status-badge.slip-printed {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.status-badge.slip-distributed {
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+.status-badge.slip-generated {
+  background: #F3E8FF;
+  color: #7C3AED;
+}
+
+.status-badge.contact-contacted {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.status-badge.contact-verified {
+  background: #EFF6FF;
+  color: #1D4ED8;
+}
+
+.status-badge.contact-follow-up {
+  background: #FFFBEB;
+  color: #D97706;
+}
 
 .status-badge .status-dot {
   width: 5px;
@@ -3783,7 +3909,8 @@ input, select, textarea {
   margin: 2rem 0;
 }
 
-.mission-card, .vision-card {
+.mission-card,
+.vision-card {
   background: #FFFFFF;
   border-radius: 16px;
   border: 1px solid #E2E8F0;
@@ -3872,12 +3999,14 @@ input, select, textarea {
     gap: 0.75rem;
     overflow: hidden;
   }
+
   .about-floating-card {
     position: static !important;
     width: 100%;
     box-shadow: var(--shadow-sm);
     padding: 0.85rem 1rem;
   }
+
   .about-floating-card.hq-card,
   .about-floating-card.trust-badge-card {
     top: auto;
@@ -4289,7 +4418,9 @@ input, select, textarea {
   font-weight: 400;
 }
 
-.field-input, .field-select, .field-textarea {
+.field-input,
+.field-select,
+.field-textarea {
   font-size: 0.9375rem;
   color: var(--color-navy-dark);
   background: #F8FAFC;
@@ -4300,7 +4431,9 @@ input, select, textarea {
   width: 100%;
 }
 
-.field-input:focus, .field-select:focus, .field-textarea:focus {
+.field-input:focus,
+.field-select:focus,
+.field-textarea:focus {
   background: #FFFFFF;
   border-color: var(--color-royal-blue);
   box-shadow: 0 0 0 3px rgba(36, 87, 214, 0.15);
@@ -4364,7 +4497,7 @@ input, select, textarea {
   transition: all 0.15s ease;
 }
 
-.radio-native:checked + .radio-pill-text {
+.radio-native:checked+.radio-pill-text {
   background: var(--color-royal-blue);
   color: #FFFFFF;
   border-color: var(--color-royal-blue);
@@ -4468,8 +4601,13 @@ input, select, textarea {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* MODAL STYLES (SECTION 14) */
@@ -4936,23 +5074,19 @@ input, select, textarea {
 .election-header-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.35) 0%,
-    rgba(15, 23, 42, 0.72) 45%,
-    rgba(15, 23, 42, 0.94) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(15, 23, 42, 0.35) 0%,
+      rgba(15, 23, 42, 0.72) 45%,
+      rgba(15, 23, 42, 0.94) 100%);
   transition: background 0.3s ease;
   z-index: 1;
 }
 
 .election-software-card:hover .election-header-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.25) 0%,
-    rgba(15, 23, 42, 0.65) 45%,
-    rgba(15, 23, 42, 0.96) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(15, 23, 42, 0.25) 0%,
+      rgba(15, 23, 42, 0.65) 45%,
+      rgba(15, 23, 42, 0.96) 100%);
 }
 
 .election-header-content {
@@ -5201,6 +5335,7 @@ input, select, textarea {
 }
 
 @media (max-width: 768px) {
+
   /* 13 Election Types — 3 cards in one row on mobile (NO detailed description) */
   .elections-cards-grid {
     display: grid !important;
@@ -5309,7 +5444,8 @@ input, select, textarea {
    ========================================================================= */
 
 /* Prevent iOS & Android Horizontal Overflow */
-html, body {
+html,
+body {
   overflow-x: hidden !important;
   max-width: 100vw;
   -webkit-text-size-adjust: 100%;
@@ -5326,7 +5462,7 @@ html, body {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
-  
+
   .section-padding {
     padding-top: 2.75rem !important;
     padding-bottom: 2.75rem !important;
@@ -5347,7 +5483,10 @@ html, body {
   }
 
   /* Prevent iOS Safari 16px Auto-Zoom on form inputs */
-  input, select, textarea, .field-input {
+  input,
+  select,
+  textarea,
+  .field-input {
     font-size: 16px !important;
   }
 
@@ -5377,6 +5516,7 @@ html, body {
 
 /* Page Hero Headings on Mobile */
 @media (max-width: 768px) {
+
   h1[style*="font-size: 3rem"],
   h1[style*="fontSize: '3rem'"],
   h1[style*="fontSize: 3rem"] {
@@ -5392,6 +5532,7 @@ html, body {
 }
 
 @media (max-width: 480px) {
+
   h1[style*="font-size: 3rem"],
   h1[style*="fontSize: '3rem'"],
   h1[style*="fontSize: 3rem"] {
@@ -5757,13 +5898,13 @@ html, body {
   }
 
   .hero-carousel-stage {
-    max-width: 377px !important;
-    width: 92% !important;
+    max-width: 440px !important;
+    width: 96% !important;
     margin: 0 auto !important;
   }
 
   .hero-carousel-img {
-    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.45)) !important;
+    filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.48)) !important;
   }
 
   .hero-phones-img {
@@ -5951,7 +6092,8 @@ html, body {
 @media (max-width: 768px) {
   .site-footer {
     padding-top: 3rem !important;
-    padding-bottom: 5.5rem !important; /* Leave clearance for fixed WhatsApp button */
+    padding-bottom: 5.5rem !important;
+    /* Leave clearance for fixed WhatsApp button */
   }
 
   .footer-bottom-bar {
@@ -6049,6 +6191,7 @@ html, body {
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0.8;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(1.65);
     opacity: 0;
@@ -6119,24 +6262,25 @@ html, body {
     bottom: calc(18px + env(safe-area-inset-bottom, 0px));
     right: calc(16px + env(safe-area-inset-right, 0px));
   }
+
   .whatsapp-floating-btn {
     width: 54px;
     height: 54px;
     box-shadow: 0 4px 16px rgba(37, 211, 102, 0.5);
   }
+
   .whatsapp-svg-icon {
     width: 28px;
     height: 28px;
   }
+
   .whatsapp-pulse-ring,
   .whatsapp-pulse-ring-delayed {
     width: 54px;
     height: 54px;
   }
+
   .whatsapp-tooltip {
     display: none !important;
   }
 }
-
-
-
