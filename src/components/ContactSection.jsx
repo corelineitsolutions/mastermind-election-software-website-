@@ -25,7 +25,7 @@ export const ContactSection = () => {
       emailSub: "औपचारिक प्रस्ताव व चौकशीसाठी",
       emailAction: "ईमेल पाठवा",
       phoneTitle: "थेट संपर्क क्रमांक",
-      phoneSub: "सकाळी १०:०० – सायं ७:३० (निवडणुकीत २४/७)",
+      phoneSub: "सोमवार ते शनिवार: सकाळी १०:०० – सायं ७:३०",
       phoneAction: "कॉल करा",
       formTitle: "मोफत सल्लामसलत बुक करा",
       formSubtitle: "खालील माहिती भरा. ही विनंती थेट आमच्या व्हॉट्सॲप नंबरवर पाठवली जाईल."
@@ -41,7 +41,7 @@ export const ContactSection = () => {
       emailSub: "औपचारिक प्रस्ताव एवं पूछताछ हेतु",
       emailAction: "ईमेल भेजें",
       phoneTitle: "सीधा संपर्क नंबर",
-      phoneSub: "प्रातः 10:00 – सायं 7:30 (चुनाव में 24/7)",
+      phoneSub: "सोमवार से शनिवार: प्रातः 10:00 – सायं 7:30",
       phoneAction: "कॉल करें",
       formTitle: "मुफ्त परामर्श बुक करें",
       formSubtitle: "नीचे विवरण भरें। यह अनुरोध सीधे हमारे व्हाट्सएप नंबर पर भेजा जाएगा।"
@@ -57,7 +57,7 @@ export const ContactSection = () => {
       emailSub: "For formal RFPs, proposals & enquiries",
       emailAction: "Send Email",
       phoneTitle: "Direct Contact Numbers",
-      phoneSub: "10:00 AM – 7:30 PM IST (24/7 during elections)",
+      phoneSub: "Monday – Saturday: 10:00 AM – 7:30 PM IST",
       phoneAction: "Click to Call",
       formTitle: "Request a Consultation",
       formSubtitle: "Fill out the details below. This inquiry will be dispatched directly to our WhatsApp War Room."

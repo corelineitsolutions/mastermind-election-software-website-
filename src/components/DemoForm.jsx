@@ -95,21 +95,52 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
     }
   };
 
+  const cleanPhoneDigits = (raw) => {
+    let digits = (raw || '').replace(/[^0-9]/g, '');
+    if (digits.startsWith('91') && digits.length > 10) {
+      digits = digits.slice(2);
+    } else if (digits.startsWith('0') && digits.length > 10) {
+      digits = digits.slice(1);
+    }
+    return digits;
+  };
+
   const buildWhatsAppMessage = () => {
-    return (
-      `*New Election Software & Consultation Request*\n` +
-      `----------------------------------------\n` +
-      `👤 *Name:* ${formData.fullName.trim()}\n` +
-      `📱 *Mobile:* +91 ${formData.mobile.trim()}\n` +
-      (formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : '') +
-      (formData.org.trim() ? `🏛️ *Party / Campaign:* ${formData.org.trim()}\n` : '') +
-      `📍 *Constituency:* ${formData.constituency.trim() || 'Maharashtra'}\n` +
-      `🗳️ *Service / Election:* ${formData.service}\n` +
-      `💬 *Preferred Contact:* ${formData.preferredContact}\n` +
-      (formData.message.trim() ? `📝 *Message:* ${formData.message.trim()}\n` : '') +
-      `----------------------------------------\n` +
-      `_Sent from Mastermind Media Election Portal_`
-    );
+    const lines = [
+      '*MASTERMIND ELECTION SOFTWARE*',
+      '*Demo & Consultation Request*',
+      '----------------------------------------',
+      `*Name:* ${formData.fullName.trim()}`,
+      `*Mobile:* +91 ${cleanPhoneDigits(formData.mobile)}`
+    ];
+
+    if (formData.email && formData.email.trim()) {
+      lines.push(`*Email:* ${formData.email.trim()}`);
+    }
+
+    const org = formData.org.trim();
+    if (org && org.toLowerCase() !== 'others' && org.toLowerCase() !== 'select') {
+      lines.push(`*Party / Organization:* ${org}`);
+    } else if (org && org.toLowerCase() === 'others') {
+      lines.push(`*Party / Organization:* Independent / Others`);
+    }
+
+    const c = formData.constituency.trim();
+    if (c && c.toLowerCase() !== 'select' && c.toLowerCase() !== 'none') {
+      lines.push(`*Constituency:* ${c}`);
+    }
+
+    lines.push(`*Service / Election:* ${formData.service}`);
+    lines.push(`*Preferred Contact:* ${formData.preferredContact}`);
+
+    if (formData.message && formData.message.trim()) {
+      lines.push(`*Message:* ${formData.message.trim()}`);
+    }
+
+    lines.push('----------------------------------------');
+    lines.push('Sent via Mastermind Media Website');
+
+    return lines.join('\n');
   };
 
   const getWhatsAppDirectLink = () => {
@@ -118,17 +149,19 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
   };
 
   const getEmailDirectLink = () => {
-    const subject = encodeURIComponent(`Election Consultation Request - ${formData.fullName}`);
+    const subject = encodeURIComponent(`Election Consultation Request - ${formData.fullName.trim()}`);
     const body = encodeURIComponent(
-      `Hello Mastermind Media Team,\n\nI have submitted a consultation request for election software:\n\n` +
-      `Name: ${formData.fullName}\n` +
-      `Mobile: ${formData.mobile}\n` +
-      `Email: ${formData.email || 'Not provided'}\n` +
-      `Party / Campaign: ${formData.org || 'Not provided'}\n` +
-      `Constituency: ${formData.constituency || 'Maharashtra'}\n` +
+      `Hello Mastermind Media Team,\n\n` +
+      `I would like to request an election software demonstration & consultation:\n\n` +
+      `Name: ${formData.fullName.trim()}\n` +
+      `Mobile: +91 ${cleanPhoneDigits(formData.mobile)}\n` +
+      (formData.email.trim() ? `Email: ${formData.email.trim()}\n` : '') +
+      (formData.org.trim() ? `Party / Organization: ${formData.org.trim()}\n` : '') +
+      (formData.constituency.trim() && formData.constituency.trim().toLowerCase() !== 'select' ? `Constituency: ${formData.constituency.trim()}\n` : '') +
       `Service: ${formData.service}\n` +
-      `Message: ${formData.message || 'None'}\n\n` +
-      `Please contact me at your earliest convenience.`
+      `Preferred Contact: ${formData.preferredContact}\n` +
+      (formData.message.trim() ? `Message: ${formData.message.trim()}\n` : '') +
+      `\nPlease contact me at your earliest convenience.`
     );
     return `mailto:contact@mastermindmedias.com?subject=${subject}&body=${body}`;
   };
