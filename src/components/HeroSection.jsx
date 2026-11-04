@@ -21,6 +21,9 @@ export const HeroSection = ({ onOpenDemo }) => {
           <h1 className="hero-main-heading-white">
             Master Mind Election Software
           </h1>
+          <p className="hero-subheadline-white">
+            Smarter Campaigns Start with Smarter Management.
+          </p>
         </div>
       </div>
     </section>

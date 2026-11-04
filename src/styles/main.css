@@ -2380,6 +2380,20 @@ textarea {
   max-width: 960px;
 }
 
+.hero-subheadline-white {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  max-width: 760px;
+}
+
 .hero-background-layer {
   position: absolute;
   inset: 0;
