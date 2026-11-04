@@ -173,11 +173,6 @@ export const Footer = ({ onOpenDemo }) => {
           <div>
             <h4 className="footer-col-title">{t.colContact}</h4>
             <div className="footer-contact-item">
-              <MapPin size={18} className="text-royal flex-shrink-0" style={{ marginTop: '2px' }} />
-              <span>404, 4th Floor, B Wing, City Vista, Kharadi, Pune – 411014, Maharashtra.</span>
-            </div>
-
-            <div className="footer-contact-item">
               <Phone size={16} className="text-royal flex-shrink-0" style={{ marginTop: '2px' }} />
               <div>
                 <a href="tel:+919604001344" className="footer-phone-link">9604001344</a>

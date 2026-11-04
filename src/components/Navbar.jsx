@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { Menu, X, ArrowRight, Phone, MessageCircle, ChevronDown, Check } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone, MessageCircle, ChevronDown, Check, Mail } from 'lucide-react';
 
 export const Navbar = ({ onOpenDemo }) => {
   const { language, setLanguage, t } = useLanguage();
@@ -248,6 +248,15 @@ export const Navbar = ({ onOpenDemo }) => {
             >
               <MessageCircle size={16} color="#25D366" />
               <span>WhatsApp: +91 96040 01344</span>
+            </a>
+
+            <a
+              href="mailto:contact@mastermindmedias.com"
+              className="btn btn-outline-white"
+              style={{ width: '100%', border: '1px solid #E5E7EB', justifyContent: 'center' }}
+            >
+              <Mail size={15} />
+              <span>Email: contact@mastermindmedias.com</span>
             </a>
 
             <a

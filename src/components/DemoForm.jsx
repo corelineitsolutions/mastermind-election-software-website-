@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { CheckCircle2, AlertCircle, Loader2, Send, MessageCircle, Phone, ShieldCheck } from 'lucide-react';
+import { 
+  CheckCircle2, 
+  AlertCircle, 
+  Loader2, 
+  Send, 
+  MessageCircle, 
+  Phone, 
+  Mail, 
+  ShieldCheck 
+} from 'lucide-react';
 
 export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Election Management Software' }) => {
   const { language } = useLanguage();
@@ -12,7 +21,7 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
     org: '',
     constituency: '',
     service: preselectedService,
-    preferredContact: 'Phone Call',
+    preferredContact: 'WhatsApp',
     message: '',
     consent: true,
     websiteHoneypot: '' // Anti-spam honeypot
@@ -25,30 +34,28 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
 
   const serviceOptions = [
     'Lok Sabha Election Software',
+    'Rajya Sabha Election Software',
     'Vidhan Sabha Election Software',
-    'Mahanagarpalika Election Software',
-    'Nagar Parishad & Nagar Panchayat Software',
-    'Municipal Ward / Prabhag Election Software',
-    'Zilla Parishad & Panchayat Samiti Software',
+    'Vidhan Parishad (MLC) Election Software',
+    'Graduate & Teacher Constituency Election Software',
+    'Municipal Corporation (Mahanagarpalika) Election Software',
+    'Municipal Council (Nagar Parishad) Election Software',
+    'Nagar Panchayat Election Software',
+    'Zilla Parishad Election Software',
+    'Panchayat Samiti Election Software',
     'Gram Panchayat Election Software',
-    'Graduate Constituency Election Software',
-    "Teachers' Constituency Election Software",
-    'Vidhan Parishad & Rajya Sabha Software',
     'Voter Database & Slip Management',
     'Social Media War Room',
     'Paid Digital Campaigning',
-    'Political Promotional Documentaries',
-    'LED Van Campaigning',
     'Bulk SMS & Voice Call Broadcasting',
-    'WhatsApp Business Promotions',
     'Other Custom Campaign Solution'
   ];
 
+  // Strictly only WhatsApp, Email, and Phone Call
   const contactMethods = [
-    'Phone Call',
     'WhatsApp',
-    'In-Person Meeting at Pune Office',
-    'Email'
+    'Email',
+    'Phone Call'
   ];
 
   const validate = () => {
@@ -88,6 +95,44 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
     }
   };
 
+  const buildWhatsAppMessage = () => {
+    return (
+      `*New Election Software & Consultation Request*\n` +
+      `----------------------------------------\n` +
+      `👤 *Name:* ${formData.fullName.trim()}\n` +
+      `📱 *Mobile:* +91 ${formData.mobile.trim()}\n` +
+      (formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : '') +
+      (formData.org.trim() ? `🏛️ *Party / Campaign:* ${formData.org.trim()}\n` : '') +
+      `📍 *Constituency:* ${formData.constituency.trim() || 'Maharashtra'}\n` +
+      `🗳️ *Service / Election:* ${formData.service}\n` +
+      `💬 *Preferred Contact:* ${formData.preferredContact}\n` +
+      (formData.message.trim() ? `📝 *Message:* ${formData.message.trim()}\n` : '') +
+      `----------------------------------------\n` +
+      `_Sent from Mastermind Media Election Portal_`
+    );
+  };
+
+  const getWhatsAppDirectLink = () => {
+    const text = encodeURIComponent(buildWhatsAppMessage());
+    return `https://wa.me/919604001344?text=${text}`;
+  };
+
+  const getEmailDirectLink = () => {
+    const subject = encodeURIComponent(`Election Consultation Request - ${formData.fullName}`);
+    const body = encodeURIComponent(
+      `Hello Mastermind Media Team,\n\nI have submitted a consultation request for election software:\n\n` +
+      `Name: ${formData.fullName}\n` +
+      `Mobile: ${formData.mobile}\n` +
+      `Email: ${formData.email || 'Not provided'}\n` +
+      `Party / Campaign: ${formData.org || 'Not provided'}\n` +
+      `Constituency: ${formData.constituency || 'Maharashtra'}\n` +
+      `Service: ${formData.service}\n` +
+      `Message: ${formData.message || 'None'}\n\n` +
+      `Please contact me at your earliest convenience.`
+    );
+    return `mailto:contact@mastermindmedias.com?subject=${subject}&body=${body}`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitError(null);
@@ -104,8 +149,7 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
     setIsSubmitting(true);
 
     try {
-      // Simulate enterprise CRM dispatch latency
-      await new Promise(resolve => setTimeout(resolve, 850));
+      const waUrl = getWhatsAppDirectLink();
 
       // Persist enquiry securely in browser storage
       try {
@@ -119,43 +163,61 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
         // Fallback for private browsing
       }
 
+      // Immediately open WhatsApp with the formatted consultation details
+      window.open(waUrl, '_blank');
+
       setIsSubmitted(true);
       if (onSuccess) onSuccess();
     } catch (err) {
-      setSubmitError('Unable to process enquiry at this moment. Please call +91-9604001344 directly.');
+      setSubmitError('Unable to open WhatsApp automatically. Please click the button below to connect on WhatsApp directly.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const getWhatsAppDirectLink = () => {
-    const text = encodeURIComponent(
-      `Hello Mastermind Media Team,\nI have requested an election consultation.\nName: ${formData.fullName}\nMobile: ${formData.mobile}\nService: ${formData.service}\nConstituency: ${formData.constituency || 'Maharashtra'}\nPlease contact me.`
-    );
-    return `https://wa.me/919604001344?text=${text}`;
-  };
-
   if (isSubmitted) {
     return (
       <div className="form-success-card" role="alert" aria-live="polite">
-        <div className="success-icon-wrap">
-          <CheckCircle2 size={44} className="text-success" />
+        <div className="success-icon-wrap" style={{ background: '#ECFDF5', color: '#10B981' }}>
+          <CheckCircle2 size={44} />
         </div>
-        <h3 className="success-title">Consultation Request Received</h3>
+        <h3 className="success-title">
+          {language === 'mr' 
+            ? 'सल्लामसलत विनंती व्हॉट्सॲपवर पाठवली!'
+            : language === 'hi'
+            ? 'परामर्श अनुरोध व्हाट्सएप पर भेजा गया!'
+            : 'Consultation Request Forwarded to WhatsApp!'}
+        </h3>
         <p className="success-message">
-          Thank you, <strong>{formData.fullName}</strong>. Our senior political technology specialist will contact you via <strong>{formData.preferredContact}</strong> at <strong>+91-{formData.mobile}</strong> within 2 business hours.
+          {language === 'mr' ? (
+            <>धन्यवाद, <strong>{formData.fullName}</strong>. आपली माहिती आमच्या अधिकृत व्हॉट्सॲप वॉर रूम (<strong>+९१ ९६०४० ०१३४४</strong>) वर पाठवण्यात आली आहे. आमचे तज्ज्ञ आपल्याशी तत्काळ संपर्क साधतील.</>
+          ) : language === 'hi' ? (
+            <>धन्यवाद, <strong>{formData.fullName}</strong>. आपका विवरण हमारे आधिकारिक व्हाट्सएप वॉर रूम (<strong>+91 96040 01344</strong>) पर भेज दिया गया है। हमारे विशेषज्ञ आपसे शीघ्र संपर्क करेंगे।</>
+          ) : (
+            <>Thank you, <strong>{formData.fullName}</strong>. Your consultation details have been forwarded to our official WhatsApp War Room at <strong>+91 96040 01344</strong>. Our senior director will connect with you shortly.</>
+          )}
         </p>
 
-        <div className="success-actions-box">
+        {/* Strictly ONLY WhatsApp, Email, and Contact Number */}
+        <div className="success-actions-box" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '1.25rem' }}>
           <a
             href={getWhatsAppDirectLink()}
             target="_blank"
             rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{ width: '100%', justifyContent: 'center', background: '#25D366', borderColor: '#25D366', color: '#FFFFFF' }}
+          >
+            <MessageCircle size={18} />
+            <span>Open WhatsApp Chat Directly</span>
+          </a>
+
+          <a
+            href={getEmailDirectLink()}
             className="btn btn-royal"
             style={{ width: '100%', justifyContent: 'center' }}
           >
-            <MessageCircle size={18} />
-            <span>Connect on WhatsApp for Instant Access</span>
+            <Mail size={16} />
+            <span>Send via Email: contact@mastermindmedias.com</span>
           </a>
 
           <a
@@ -164,7 +226,7 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
             style={{ width: '100%', justifyContent: 'center' }}
           >
             <Phone size={16} />
-            <span>Call War Room Desk: +91 96040 01344</span>
+            <span>Call Helpline: +91 96040 01344</span>
           </a>
         </div>
 
@@ -179,13 +241,14 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
               org: '',
               constituency: '',
               service: preselectedService,
-              preferredContact: 'Phone Call',
+              preferredContact: 'WhatsApp',
               message: '',
               consent: true,
               websiteHoneypot: ''
             });
           }}
           className="reset-form-link"
+          style={{ marginTop: '1.25rem', display: 'inline-block' }}
         >
           Submit another inquiry
         </button>
@@ -269,7 +332,7 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="office@candidate.in"
+            placeholder="e.g. candidate@domain.com"
             className={`field-input ${errors.email ? 'has-error' : ''}`}
             autoComplete="email"
           />
@@ -278,7 +341,7 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
 
         <div className="form-field-group">
           <label htmlFor={`org-${isModal ? 'modal' : 'page'}`} className="field-label">
-            Organization / Campaign Name <span className="optional-tag">(Optional)</span>
+            Political Party / Campaign Organization <span className="optional-tag">(Optional)</span>
           </label>
           <input
             type="text"
@@ -286,17 +349,17 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
             name="org"
             value={formData.org}
             onChange={handleChange}
-            placeholder="e.g. Campaign Office / Consultant"
+            placeholder="e.g. Independent / Party Name"
             className="field-input"
           />
         </div>
       </div>
 
-      {/* Row 3: Constituency / District & Service Interested In */}
+      {/* Row 3: Constituency & Election / Service Type */}
       <div className="form-row-two-col">
         <div className="form-field-group">
           <label htmlFor={`constituency-${isModal ? 'modal' : 'page'}`} className="field-label">
-            Constituency / District <span className="optional-tag">(Optional)</span>
+            Constituency / City / District <span className="optional-tag">(Optional)</span>
           </label>
           <input
             type="text"
@@ -304,14 +367,14 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
             name="constituency"
             value={formData.constituency}
             onChange={handleChange}
-            placeholder="e.g. Pune, Nagpur, Kolhapur AC"
+            placeholder="e.g. Pune City / Baramati / Nashik"
             className="field-input"
           />
         </div>
 
         <div className="form-field-group">
           <label htmlFor={`service-${isModal ? 'modal' : 'page'}`} className="field-label">
-            Service Interested In <span className="required-star">*</span>
+            Service or Election Level Needed
           </label>
           <select
             id={`service-${isModal ? 'modal' : 'page'}`}
@@ -320,21 +383,23 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
             onChange={handleChange}
             className="field-select"
           >
-            {serviceOptions.map((opt, i) => (
-              <option key={i} value={opt}>{opt}</option>
+            {serviceOptions.map((opt, idx) => (
+              <option key={idx} value={opt}>
+                {opt}
+              </option>
             ))}
           </select>
         </div>
       </div>
 
-      {/* Row 4: Preferred Contact Method */}
+      {/* Row 4: Preferred Contact Method - Strictly WhatsApp, Email, Phone Call */}
       <div className="form-field-group">
         <label className="field-label">
-          Preferred Contact Method <span className="optional-tag">(Optional)</span>
+          Preferred Contact Method
         </label>
-        <div className="contact-methods-radio-group">
-          {contactMethods.map((method, idx) => (
-            <label key={idx} className="radio-pill-label">
+        <div className="radio-pills-row">
+          {contactMethods.map((method) => (
+            <label key={method} className={`radio-pill-item ${formData.preferredContact === method ? 'selected' : ''}`}>
               <input
                 type="radio"
                 name="preferredContact"
@@ -343,13 +408,15 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
                 onChange={handleChange}
                 className="radio-native"
               />
-              <span className="radio-pill-text">{method}</span>
+              <span className="radio-pill-text">
+                {method === 'WhatsApp' ? '💬 WhatsApp' : method === 'Email' ? '📧 Email' : '📞 Phone Call'}
+              </span>
             </label>
           ))}
         </div>
       </div>
 
-      {/* Row 5: Message / Requirements */}
+      {/* Row 5: Message / Specific Requirements */}
       <div className="form-field-group">
         <label htmlFor={`message-${isModal ? 'modal' : 'page'}`} className="field-label">
           Message / Specific Requirements <span className="optional-tag">(Optional)</span>
@@ -383,21 +450,23 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
         {errors.consent && <span className="field-error-msg">{errors.consent}</span>}
       </div>
 
-      {/* Submit Button */}
+      {/* Submit Button - Directly sends to WhatsApp */}
       <div className="form-submit-row">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="btn btn-royal btn-lg form-submit-btn"
+          className="btn btn-primary btn-lg form-submit-btn"
+          style={{ width: '100%', justifyContent: 'center', background: 'linear-gradient(135deg, #FF6A00 0%, #EA580C 100%)', boxShadow: '0 8px 24px rgba(234, 88, 12, 0.35)' }}
         >
           {isSubmitting ? (
             <>
               <Loader2 size={18} className="spin-animation" />
-              <span>Processing Request...</span>
+              <span>Forwarding to WhatsApp...</span>
             </>
           ) : (
             <>
-              <span>Request a Consultation</span>
+              <MessageCircle size={18} />
+              <span>Request a Consultation (Sends to WhatsApp)</span>
               <Send size={18} />
             </>
           )}
@@ -405,7 +474,7 @@ export const DemoForm = ({ onSuccess, isModal = false, preselectedService = 'Ele
 
         <div className="form-privacy-note">
           <ShieldCheck size={14} className="text-royal" />
-          <span>Zero spam • 100% confidential voter roll handling</span>
+          <span>Zero spam • 100% confidential voter roll handling • Direct WhatsApp dispatch</span>
         </div>
       </div>
     </form>

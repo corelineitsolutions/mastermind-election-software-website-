@@ -49,11 +49,11 @@ export const ContactPage = () => {
 
             <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
               <div style={{ width: '2.5rem', height: '2.5rem', borderRadius: '10px', background: 'var(--color-royal-blue-subtle)', color: 'var(--color-royal-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <MapPin size={22} />
+                <Headphones size={22} />
               </div>
               <div>
-                <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-navy-dark)', marginBottom: '0.25rem' }}>In-Person Pune Meetings</h4>
-                <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6 }}>Visit our City Vista Kharadi office in Pune for an in-depth software demo on large war-room multi-screen monitors.</p>
+                <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-navy-dark)', marginBottom: '0.25rem' }}>Direct WhatsApp & Email</h4>
+                <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: 1.6 }}>Connect directly via WhatsApp (+91 96040 01344) or Email (contact@mastermindmedias.com) for immediate demo walkthroughs.</p>
               </div>
             </div>
           </div>

@@ -2,12 +2,12 @@ import React from 'react';
 import { DemoForm } from './DemoForm';
 import { useLanguage } from '../i18n/LanguageContext';
 import { 
-  MapPin, 
   Phone, 
   Mail, 
   MessageCircle, 
   Clock, 
-  ExternalLink
+  ShieldCheck,
+  ArrowRight
 } from 'lucide-react';
 
 export const ContactSection = () => {
@@ -17,59 +17,50 @@ export const ContactSection = () => {
     mr: {
       eyebrow: "आमच्या तज्ज्ञांशी संपर्क साधा",
       title: "आपल्या पुढील निवडणूक मोहिमेचे नियोजन करूया",
-      desc: "निवडणूक सॉफ्टवेअर डेमो, मतदार डेटाबेस आणि प्रचार व्यवस्थापनासाठी मास्टरमाइंड मीडियाशी संपर्क साधा.",
-      call1: "मुख्य हेल्पलाइन (कॉल करा)",
-      call2: "प्रचार सपोर्ट (कॉल करा)",
-      waLabel: "थेट व्हॉट्सॲप डेस्क",
-      hqTitle: "कॉर्पोरेट मुख्यालय",
-      address: "मास्टरमाइंड मीडिया\n४०४, चौथा मजला, बी विंग, सिटी व्हिस्टा,\nखराडी, पुणे – ४११०१४, महाराष्ट्र.",
-      mapsLink: "गुगल मॅप्सवर उघडा",
-      hoursTitle: "कामकाज व सपोर्ट वेळ",
-      days1: "सोमवार – शनिवार:",
-      hours1: "सकाळी १०:०० – संध्याकाळी ७:३० IST",
-      days2: "निवडणूक वॉर रूम सपोर्ट:",
-      hours2: "२४/७ प्राधान्य हेल्पलाइन",
-      emailLabel: "अधिकृत ईमेल:",
+      desc: "निवडणूक सॉफ्टवेअर डेमो, मतदार डेटाबेस आणि प्रचार व्यवस्थापनासाठी आमच्याशी थेट संपर्क साधा.",
+      waTitle: "व्हॉट्सॲप वॉर रूम डेस्क",
+      waSub: "तत्काळ उत्तर व थेट डेमो ॲक्सेस",
+      waAction: "व्हॉट्सॲपवर चॅट करा",
+      emailTitle: "अधिकृत ईमेल सपोर्ट",
+      emailSub: "औपचारिक प्रस्ताव व चौकशीसाठी",
+      emailAction: "ईमेल पाठवा",
+      phoneTitle: "थेट संपर्क क्रमांक",
+      phoneSub: "सकाळी १०:०० – सायं ७:३० (निवडणुकीत २४/७)",
+      phoneAction: "कॉल करा",
       formTitle: "मोफत सल्लामसलत बुक करा",
-      formSubtitle: "खालील माहिती भरा. आमचे तांत्रिक व प्रचार संचालक आपल्याशी तत्काळ संपर्क साधतील."
+      formSubtitle: "खालील माहिती भरा. ही विनंती थेट आमच्या व्हॉट्सॲप नंबरवर पाठवली जाईल."
     },
     hi: {
       eyebrow: "हमारे विशेषज्ञों से संपर्क करें",
       title: "अपने अगले चुनाव अभियान की योजना बनाएं",
-      desc: "चुनाव सॉफ्टवेयर डेमो, वोटर डेटाबेस और प्रचार प्रबंधन के लिए मास्टरमाइंड मीडिया से संपर्क करें।",
-      call1: "मुख्य हेल्पलाइन (कॉल करें)",
-      call2: "प्रचार सपोर्ट (कॉल करें)",
-      waLabel: "सीधा व्हाट्सएप डेस्क",
-      hqTitle: "कॉर्पोरेट मुख्यालय",
-      address: "मास्टरमाइंड मीडिया\n404, चौथी मंजिल, बी विंग, सिटी विस्टा,\nखराड़ी, पुणे – 411014, महाराष्ट्र।",
-      mapsLink: "गूगल मैप्स पर देखें",
-      hoursTitle: "कार्य एवं सहायता समय",
-      days1: "सोमवार – शनिवार:",
-      hours1: "प्रातः 10:00 – सायं 7:30 IST",
-      days2: "सक्रिय चुनाव वॉर रूम:",
-      hours2: "24/7 प्राथमिकता हेल्पलाइन",
-      emailLabel: "आधिकारिक ईमेल:",
-      formTitle: "परामर्श के लिए अनुरोध करें",
-      formSubtitle: "नीचे विवरण भरें। हमारे तकनीकी एवं प्रचार निदेशक आपसे शीघ्र संपर्क करेंगे।"
+      desc: "चुनाव सॉफ्टवेयर डेमो, वोटर डेटाबेस और प्रचार प्रबंधन के लिए हमसे सीधा संपर्क करें।",
+      waTitle: "व्हाट्सएप वॉर रूम डेस्क",
+      waSub: "त्वरित उत्तर एवं तत्काल डेमो एक्सेस",
+      waAction: "व्हाट्सएप पर चैट करें",
+      emailTitle: "आधिकारिक ईमेल सपोर्ट",
+      emailSub: "औपचारिक प्रस्ताव एवं पूछताछ हेतु",
+      emailAction: "ईमेल भेजें",
+      phoneTitle: "सीधा संपर्क नंबर",
+      phoneSub: "प्रातः 10:00 – सायं 7:30 (चुनाव में 24/7)",
+      phoneAction: "कॉल करें",
+      formTitle: "मुफ्त परामर्श बुक करें",
+      formSubtitle: "नीचे विवरण भरें। यह अनुरोध सीधे हमारे व्हाट्सएप नंबर पर भेजा जाएगा।"
     },
     en: {
       eyebrow: "CONNECT WITH OUR SPECIALISTS",
       title: "Let's Plan Your Next Campaign",
       desc: "Connect with Mastermind Media for election software demonstrations, voter database solutions, and campaign management enquiries.",
-      call1: "Primary Helpline (Click to Call)",
-      call2: "Campaign Support (Click to Call)",
-      waLabel: "Direct WhatsApp Desk",
-      hqTitle: "Corporate Headquarters",
-      address: "Mastermind Media\n404, 4th Floor, B Wing, City Vista,\nKharadi, Pune – 411014, Maharashtra.",
-      mapsLink: "Open in Google Maps",
-      hoursTitle: "Business & Support Hours",
-      days1: "Monday – Saturday:",
-      hours1: "10:00 AM – 7:30 PM IST",
-      days2: "Active Campaign / War Room:",
-      hours2: "24/7 Priority Helpline",
-      emailLabel: "Official Email:",
+      waTitle: "WhatsApp War Room Desk",
+      waSub: "Instant response for demo access & voter lists",
+      waAction: "Chat on WhatsApp",
+      emailTitle: "Official Email Support",
+      emailSub: "For formal RFPs, proposals & enquiries",
+      emailAction: "Send Email",
+      phoneTitle: "Direct Contact Numbers",
+      phoneSub: "10:00 AM – 7:30 PM IST (24/7 during elections)",
+      phoneAction: "Click to Call",
       formTitle: "Request a Consultation",
-      formSubtitle: "Fill out the details below. Our technical and campaign directors will get in touch promptly."
+      formSubtitle: "Fill out the details below. This inquiry will be dispatched directly to our WhatsApp War Room."
     }
   };
 
@@ -91,102 +82,98 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        {/* Two-Column Layout on Desktop */}
+        {/* Two-Column Layout */}
         <div className="contact-two-column-grid">
-          {/* Left Column: Office Details, Click-to-call, Location Link, Business Hours */}
+          {/* Left Column: Strictly WhatsApp, Email, and Contact Number */}
           <div className="contact-info-panel">
-            {/* Quick Calling Cards */}
-            <div className="contact-quick-actions">
-              <a 
-                href="tel:+919604001344"
-                className="contact-action-card call-card"
-                title="Call 9604001344"
-              >
-                <div className="contact-action-icon">
-                  <Phone size={22} />
-                </div>
-                <div>
-                  <div className="action-sublabel">{t.call1}</div>
-                  <div className="action-main-val">9604001344</div>
-                </div>
-              </a>
-
-              <a 
-                href="tel:+919657301344"
-                className="contact-action-card call-card"
-                title="Call 9657301344"
-              >
-                <div className="contact-action-icon">
-                  <Phone size={22} />
-                </div>
-                <div>
-                  <div className="action-sublabel">{t.call2}</div>
-                  <div className="action-main-val">9657301344</div>
-                </div>
-              </a>
-
+            <div className="contact-quick-actions" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {/* 1. WhatsApp Option */}
               <a 
                 href="https://wa.me/919604001344?text=Hello%20Mastermind%20Media%20Team%2C%20I%20would%20like%20to%20discuss%20election%20software%20and%20campaign%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-action-card whatsapp-card"
-                title="Chat on WhatsApp"
+                title="Chat on WhatsApp (+91 96040 01344)"
+                style={{ borderLeft: '4px solid #25D366' }}
               >
-                <div className="contact-action-icon whatsapp-bg">
-                  <MessageCircle size={22} />
+                <div className="contact-action-icon whatsapp-bg" style={{ background: '#ECFDF5', color: '#10B981' }}>
+                  <MessageCircle size={24} />
                 </div>
-                <div>
-                  <div className="action-sublabel">{t.waLabel}</div>
-                  <div className="action-main-val">+91 96040 01344</div>
+                <div style={{ flex: 1 }}>
+                  <div className="action-sublabel" style={{ fontWeight: 700, color: '#15803D' }}>{t.waTitle}</div>
+                  <div className="action-main-val" style={{ fontSize: '1.25rem', fontWeight: 800 }}>+91 96040 01344</div>
+                  <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.2rem' }}>{t.waSub}</div>
                 </div>
+                <ArrowRight size={18} style={{ color: '#10B981' }} />
               </a>
-            </div>
 
-            {/* Office Address Card */}
-            <div className="contact-detail-card">
-              <div className="detail-card-header">
-                <MapPin size={22} className="text-royal" />
-                <h3 className="detail-card-title">{t.hqTitle}</h3>
-              </div>
-              <p className="detail-card-address" style={{ whiteSpace: 'pre-line' }}>
-                {t.address}
-              </p>
-
+              {/* 2. Email Option */}
               <a 
-                href="https://maps.google.com/?q=City+Vista+Kharadi+Pune+411014" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="location-map-link"
+                href="mailto:contact@mastermindmedias.com?subject=Election%20Software%20Consultation%20Enquiry"
+                className="contact-action-card email-card"
+                title="Send Email to contact@mastermindmedias.com"
+                style={{ borderLeft: '4px solid var(--color-royal-blue)' }}
               >
-                <span>{t.mapsLink}</span>
-                <ExternalLink size={14} />
+                <div className="contact-action-icon" style={{ background: '#EFF6FF', color: 'var(--color-royal-blue)' }}>
+                  <Mail size={24} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div className="action-sublabel" style={{ fontWeight: 700, color: 'var(--color-royal-blue)' }}>{t.emailTitle}</div>
+                  <div className="action-main-val" style={{ fontSize: '1.15rem', fontWeight: 800 }}>contact@mastermindmedias.com</div>
+                  <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.2rem' }}>{t.emailSub}</div>
+                </div>
+                <ArrowRight size={18} style={{ color: 'var(--color-royal-blue)' }} />
               </a>
+
+              {/* 3. Contact Numbers (Call Options) */}
+              <div 
+                className="contact-detail-card" 
+                style={{ borderLeft: '4px solid var(--color-orange-red)', padding: '1.25rem' }}
+              >
+                <div className="detail-card-header" style={{ marginBottom: '0.75rem' }}>
+                  <Phone size={22} className="text-orange" />
+                  <h3 className="detail-card-title" style={{ fontSize: '1.1rem' }}>{t.phoneTitle}</h3>
+                </div>
+                <p style={{ fontSize: '0.825rem', color: '#64748B', marginBottom: '1rem' }}>
+                  {t.phoneSub}
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                  <a 
+                    href="tel:+919604001344"
+                    className="btn btn-secondary btn-sm"
+                    style={{ justifyContent: 'center', width: '100%', fontWeight: 700 }}
+                  >
+                    <Phone size={14} />
+                    <span>9604001344</span>
+                  </a>
+                  <a 
+                    href="tel:+919657301344"
+                    className="btn btn-secondary btn-sm"
+                    style={{ justifyContent: 'center', width: '100%', fontWeight: 700 }}
+                  >
+                    <Phone size={14} />
+                    <span>9657301344</span>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            {/* Business Hours & Support */}
-            <div className="contact-detail-card">
-              <div className="detail-card-header">
-                <Clock size={20} className="text-royal" />
-                <h3 className="detail-card-title">{t.hoursTitle}</h3>
+            {/* Confidentiality & Security Assurance */}
+            <div className="contact-detail-card" style={{ marginTop: '1.25rem', background: '#F8FAFC' }}>
+              <div className="detail-card-header" style={{ marginBottom: '0.5rem' }}>
+                <ShieldCheck size={20} className="text-royal" />
+                <h4 style={{ fontSize: '0.95rem', fontWeight: 700, margin: 0, color: 'var(--color-navy-dark)' }}>
+                  100% Confidential War Room Handling
+                </h4>
               </div>
-              <ul className="hours-bullet-list">
-                <li>
-                  <span className="days">{t.days1}</span>
-                  <span className="hours">{t.hours1}</span>
-                </li>
-                <li>
-                  <span className="days">{t.days2}</span>
-                  <span className="hours highlight">{t.hours2}</span>
-                </li>
-                <li>
-                  <span className="days">{t.emailLabel}</span>
-                  <a href="mailto:contact@mastermindmedias.com" className="email-link">contact@mastermindmedias.com</a>
-                </li>
-              </ul>
+              <p style={{ fontSize: '0.8125rem', color: '#64748B', margin: 0, lineHeight: 1.5 }}>
+                All consultations, electoral strategy discussions, and voter database inquiries are strictly protected under non-disclosure protocols.
+              </p>
             </div>
           </div>
 
-          {/* Right Column: Lead Enquiry Form */}
+          {/* Right Column: Lead Enquiry Form (Dispatches to WhatsApp) */}
           <div className="contact-form-panel">
             <div className="form-panel-header">
               <h3 className="form-panel-title">{t.formTitle}</h3>
