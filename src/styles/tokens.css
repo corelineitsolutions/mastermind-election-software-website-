@@ -4,20 +4,20 @@
   --color-orange-bright: #F97316;
   --color-orange-dark: #C2410C;
   --color-orange-hover: #D9480F;
-  --color-orange-subtle: #FFF7ED;
+  --color-orange-subtle: #F1F5F9;
   --color-orange-glow: rgba(234, 88, 12, 0.25);
   --color-orange-tint: #FFEDD5;
 
   /* Global Brand Accent Tokens (White with Orange Extracts & Touchups) */
   --color-royal-blue: #EA580C;
   --color-royal-blue-hover: #C2410C;
-  --color-royal-blue-subtle: #FFF7ED;
+  --color-royal-blue-subtle: #F1F5F9;
   --color-royal-blue-glow: rgba(234, 88, 12, 0.25);
   
   --color-gold: #EA580C;
   --color-gold-light: #FB923C;
   --color-gold-dark: #C2410C;
-  --color-gold-subtle: #FFF7ED;
+  --color-gold-subtle: #F1F5F9;
 
   /* Modern Neutral Grays & Deep Slate for crisp contrast on White surfaces */
   --color-navy-dark: #0F172A;
