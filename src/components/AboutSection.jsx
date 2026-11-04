@@ -143,9 +143,12 @@ export const AboutSection = () => {
           <div className="about-visual-column">
             <div className="about-visual-frame">
               <img 
-                src="/images/app-dashboard.jpg" 
-                alt="Mastermind Media War Room & Election Technology Deployment" 
+                src="/images/hero-section.png" 
+                alt="Mastermind Media Mobile Election App Suite" 
                 className="about-feature-img"
+                width="612"
+                height="408"
+                loading="lazy"
               />
 
               {/* Floating Pune HQ Card */}
