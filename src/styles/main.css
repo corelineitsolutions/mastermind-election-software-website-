@@ -2345,14 +2345,39 @@ textarea {
   --color-gold: #FFD700;
 
   position: relative;
-  padding-top: 4rem;
-  padding-bottom: 4.25rem;
+  padding-top: 0;
+  padding-bottom: 4rem;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   min-height: 540px;
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Centered 30% down hero title */
+.hero-headline-centered {
+  width: 100%;
+  text-align: center;
+  padding-top: 162px; /* 30% down from top of the 540px hero section */
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.hero-main-heading-white {
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5.2vw, 3.75rem);
+  font-weight: 900;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+  max-width: 960px;
 }
 
 .hero-background-layer {
@@ -5982,9 +6007,13 @@ body {
 /* Hero Section Mobile Optimization */
 @media (max-width: 768px) {
   .hero-section-premium {
-    min-height: auto !important;
-    padding-top: 1.5rem !important;
+    min-height: 400px !important;
+    padding-top: 0 !important;
     padding-bottom: 2rem !important;
+  }
+
+  .hero-headline-centered {
+    padding-top: 110px !important;
   }
 
   .hero-eyebrow-badge {

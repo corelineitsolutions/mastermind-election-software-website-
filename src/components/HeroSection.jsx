@@ -17,7 +17,11 @@ export const HeroSection = ({ onOpenDemo }) => {
       </div>
 
       <div className="container hero-container-relative">
-        {/* Hero content ready for next layout */}
+        <div className="hero-headline-centered">
+          <h1 className="hero-main-heading-white">
+            Master Mind Election Software
+          </h1>
+        </div>
       </div>
     </section>
   );
