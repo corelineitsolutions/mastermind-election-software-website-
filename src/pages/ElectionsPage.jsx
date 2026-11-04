@@ -45,10 +45,10 @@ export const ElectionsPage = ({ onOpenDemo }) => {
             <span className="badge-dot" />
             <span className="badge-text">
               {language === 'mr' 
-                ? '१३+ निवडणूक प्रकारांसाठी विशेष तंत्रज्ञान' 
+                ? '११+ निवडणूक प्रकारांसाठी विशेष तंत्रज्ञान' 
                 : language === 'hi'
-                ? '13+ चुनाव प्रकारों हेतु विशिष्ट तकनीक'
-                : '13+ ELECTION TYPES SUPPORTED'}
+                ? '11+ चुनाव प्रकारों हेतु विशिष्ट तकनीक'
+                : '11+ ELECTION TYPES SUPPORTED'}
             </span>
           </div>
 

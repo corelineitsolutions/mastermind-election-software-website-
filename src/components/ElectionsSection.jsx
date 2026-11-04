@@ -6,10 +6,8 @@ import {
   Landmark, 
   Vote, 
   Award, 
-  Users, 
   MapPin, 
   GraduationCap, 
-  School, 
   ShieldCheck, 
   CheckCircle2, 
   ArrowRight,
@@ -21,7 +19,7 @@ import {
 export const ELECTIONS_DATA = [
   {
     id: 'lok-sabha',
-    title: 'Lok Sabha Election Software',
+    title: 'Lok Sabha Election',
     category: 'parliament-assembly',
     categoryName: 'Parliamentary',
     icon: Landmark,
@@ -38,7 +36,7 @@ export const ELECTIONS_DATA = [
   },
   {
     id: 'rajya-sabha',
-    title: 'Rajya Sabha Election Software',
+    title: 'Rajya Sabha Election',
     category: 'parliament-assembly',
     categoryName: 'Parliamentary',
     icon: Award,
@@ -55,7 +53,7 @@ export const ELECTIONS_DATA = [
   },
   {
     id: 'vidhan-sabha',
-    title: 'Vidhan Sabha Election Software',
+    title: 'Vidhan Sabha Election',
     category: 'parliament-assembly',
     categoryName: 'Parliamentary',
     icon: Vote,
@@ -72,7 +70,7 @@ export const ELECTIONS_DATA = [
   },
   {
     id: 'vidhan-parishad',
-    title: 'Vidhan Parishad Election Software',
+    title: 'Vidhan Parishad (MLC) Election',
     category: 'parliament-assembly',
     categoryName: 'Parliamentary',
     icon: Building2,
@@ -88,8 +86,25 @@ export const ELECTIONS_DATA = [
     ]
   },
   {
+    id: 'graduate-teacher',
+    title: 'Graduate & Teacher Constituency Election',
+    category: 'special-council',
+    categoryName: 'Council & Professional',
+    icon: GraduationCap,
+    image: '/images/elections/graduate-constituency.jpg',
+    voterScale: '50,000 to 3,50,000+ Registered Professional Voters',
+    boothScale: 'Division-wide Specialized Polling Centers',
+    desc: 'Specialized electoral system engineered specifically for Graduate & Teacher MLC elections across divisions, featuring voter eligibility verification and Single Transferable Vote (STV) preferential quota management.',
+    features: [
+      'Graduate & Teacher voter verification and institution-wise directories',
+      'Single Transferable Vote (STV) preference 1, 2, 3 quota optimization',
+      'Multi-district professional voter directory & phone outreach',
+      'Direct WhatsApp & digital communication on service and pension issues'
+    ]
+  },
+  {
     id: 'mahanagarpalika',
-    title: 'Mahanagarpalika Election Software',
+    title: 'Municipal Corporation (Mahanagarpalika) Election',
     category: 'urban',
     categoryName: 'Urban Local Bodies',
     icon: Building2,
@@ -106,7 +121,7 @@ export const ELECTIONS_DATA = [
   },
   {
     id: 'nagar-parishad',
-    title: 'Nagar Parishad Election Software',
+    title: 'Municipal Council (Nagar Parishad) Election',
     category: 'urban',
     categoryName: 'Urban Local Bodies',
     icon: Landmark,
@@ -123,7 +138,7 @@ export const ELECTIONS_DATA = [
   },
   {
     id: 'nagar-panchayat',
-    title: 'Nagar Panchayat Election Software',
+    title: 'Nagar Panchayat Election',
     category: 'urban',
     categoryName: 'Urban Local Bodies',
     icon: MapPin,
@@ -139,25 +154,8 @@ export const ELECTIONS_DATA = [
     ]
   },
   {
-    id: 'municipal-ward',
-    title: 'Municipal Ward Election Software',
-    category: 'urban',
-    categoryName: 'Urban Local Bodies',
-    icon: Users,
-    image: '/images/elections/municipal-ward.jpg',
-    voterScale: '8,000 to 30,000+ Voters per Single/Multi Ward',
-    boothScale: '10 to 35+ Polling Booths',
-    desc: 'Granular street-by-street election management software tailored for individual ward candidates, corporators, and municipal panel aspirants.',
-    features: [
-      'Granular building-wise and street-wise voter mapping',
-      'Micro-level karyakarta assignments for every 50-100 houses',
-      'Voter loyalty marking (Favourable, Neutral, Opponent)',
-      'Polling day live voting turnout tracker booth-by-booth'
-    ]
-  },
-  {
     id: 'zilla-parishad',
-    title: 'Zilla Parishad Election Software',
+    title: 'Zilla Parishad Election',
     category: 'rural',
     categoryName: 'Rural Governance',
     icon: Landmark,
@@ -174,12 +172,12 @@ export const ELECTIONS_DATA = [
   },
   {
     id: 'panchayat-samiti',
-    title: 'Panchayat Samiti Election Software',
+    title: 'Panchayat Samiti Election',
     category: 'rural',
     categoryName: 'Rural Governance',
     icon: Layers,
     image: '/images/elections/panchayat-samiti.jpg',
-    voterScale: '15,00,000+ to 22,00,000+ Voters per PS Gan',
+    voterScale: '15,000 to 30,000+ Voters per PS Gan',
     boothScale: '20 to 40+ Rural Booths',
     desc: 'Efficient election management solution for Taluka-level Panchayat Samiti Gan constituencies with village-wise voter list analysis and karyakarta networks.',
     features: [
@@ -191,7 +189,7 @@ export const ELECTIONS_DATA = [
   },
   {
     id: 'gram-panchayat',
-    title: 'Gram Panchayat Election Software',
+    title: 'Gram Panchayat Election',
     category: 'rural',
     categoryName: 'Rural Governance',
     icon: Vote,
@@ -205,40 +203,6 @@ export const ELECTIONS_DATA = [
       'Panel candidate ticket coordination (Ward 1, 2, 3...)',
       'Pocket-friendly, rapid deployment within 24 hours of list finalization'
     ]
-  },
-  {
-    id: 'graduate-constituency',
-    title: 'Graduate Constituency Election Software',
-    category: 'special-council',
-    categoryName: 'Council & Professional',
-    icon: GraduationCap,
-    image: '/images/elections/graduate-constituency.jpg',
-    voterScale: '1,50,000 to 3,50,000+ Verified Graduate Voters',
-    boothScale: 'District-wide Specialized Polling Centers',
-    desc: 'Specialized electoral system engineered specifically for Graduate MLC elections across multi-district divisions (Pune, Mumbai, Nashik, Konkan, Nagpur, Amravati, Aurangabad).',
-    features: [
-      'Graduate voter verification & university/college degree tracking',
-      'Single Transferable Vote (STV) preference 1, 2, 3 optimization',
-      'Multi-district professional voter directory & phone outreach',
-      'Alumni association and corporate professional constituency outreach'
-    ]
-  },
-  {
-    id: 'teachers-constituency',
-    title: "Teachers' Constituency Election Software",
-    category: 'special-council',
-    categoryName: 'Council & Professional',
-    icon: School,
-    image: '/images/elections/teachers-constituency.jpg',
-    voterScale: '40,000 to 90,000+ Registered Teacher Voters',
-    boothScale: 'Division-wide Educational Polling Centers',
-    desc: 'Tailored specifically for Legislative Council Teachers Constituency elections with school, college, and educational institution-wise voter databases.',
-    features: [
-      'School, junior college, and grant-in-aid institution voter directory',
-      'Preferential voting quota algorithms and ballot ranking guidance',
-      'Teacher association and educational trust coordinator management',
-      'Direct WhatsApp and digital communication on service and pension issues'
-    ]
   }
 ];
 
@@ -247,28 +211,28 @@ export const ElectionsSection = ({ onOpenDemo }) => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', label: language === 'mr' ? 'सर्व निवडणुका (१३)' : language === 'hi' ? 'सभी चुनाव (13)' : 'All Elections (13)' },
+    { id: 'all', label: language === 'mr' ? 'सर्व निवडणुका (११)' : language === 'hi' ? 'सभी चुनाव (11)' : 'All Elections (11)' },
     { id: 'parliament-assembly', label: language === 'mr' ? 'संसद व विधानसभा' : language === 'hi' ? 'संसद व विधानसभा' : 'Parliament & Assembly' },
     { id: 'urban', label: language === 'mr' ? 'महानगरपालिका व नगरपरिषद' : language === 'hi' ? 'नगर निगम व परिषद' : 'Municipal & Urban' },
     { id: 'rural', label: language === 'mr' ? 'जिल्हा परिषद व ग्रामपंचायत' : language === 'hi' ? 'जिला परिषद व ग्राम पंचायत' : 'Panchayat & Rural' },
-    { id: 'special-council', label: language === 'mr' ? 'पदवीधर व शिक्षक मतदारसंघ' : language === 'hi' ? 'स्नातक व शिक्षक क्षेत्र' : 'Graduate & Teachers' }
+    { id: 'special-council', label: language === 'mr' ? 'पदवीधर व शिक्षक मतदारसंघ' : language === 'hi' ? 'स्नातक व शिक्षक क्षेत्र' : 'Graduate & Teacher' }
   ];
 
   const content = {
     mr: {
-      eyebrow: "१३+ निवडणूक प्रकारांसाठी विशेष तंत्रज्ञान",
+      eyebrow: "११+ निवडणूक प्रकारांसाठी विशेष तंत्रज्ञान",
       title: "प्रत्येक निवडणूक स्तरासाठी विशेष निवडणूक व्यवस्थापन सॉफ्टवेअर",
-      desc: "लोकसभा, विधानसभा ते थेट ग्रामपंचायत आणि पदवीधर मतदारसंघांपर्यंत, मास्टरमाइंड मीडिया प्रत्येक निवडणुकीच्या नियमांनुसार सानुकूल मतदार डेटाबेस, बूथ व्यवस्थापन आणि कार्यकर्ता ॲप्स पुरवते.",
+      desc: "लोकसभा, विधानसभा ते थेट ग्रामपंचायत आणि पदवीधर व शिक्षक मतदारसंघांपर्यंत, मास्टरमाइंड मीडिया प्रत्येक निवडणुकीच्या नियमांनुसार सानुकूल मतदार डेटाबेस, बूथ व्यवस्थापन आणि कार्यकर्ता ॲप्स पुरवते.",
       btnText: "या निवडणुकीसाठी डेमो मागवा"
     },
     hi: {
-      eyebrow: "13+ चुनाव प्रकारों हेतु विशिष्ट तकनीक",
+      eyebrow: "11+ चुनाव प्रकारों हेतु विशिष्ट तकनीक",
       title: "प्रत्येक चुनाव स्तर के लिए विशेष चुनाव प्रबंधन सॉफ्टवेयर",
-      desc: "लोकसभा, विधानसभा से लेकर ग्राम पंचायत और विधान परिषद तक, मास्टरमाइंड मीडिया प्रत्येक चुनाव नियमों के अनुसार कस्टम वोटर डेटाबेस, बूथ प्रबंधन और कार्यकर्ता ऐप प्रदान करता है।",
+      desc: "लोकसभा, विधानसभा से लेकर ग्राम पंचायत और शिक्षक व स्नातक क्षेत्र तक, मास्टरमाइंड मीडिया प्रत्येक चुनाव नियमों के अनुसार कस्टम वोटर डेटाबेस, बूथ प्रबंधन और कार्यकर्ता ऐप प्रदान करता है।",
       btnText: "इस चुनाव के लिए डेमो का अनुरोध करें"
     },
     en: {
-      eyebrow: "13+ ELECTION TYPES SUPPORTED",
+      eyebrow: "11+ ELECTION TYPES SUPPORTED",
       title: "Specialized Election Software for Every Election Level",
       desc: "From Parliamentary general elections to local Gram Panchayats and Council constituencies, Mastermind Media provides customized voter database algorithms, booth management, and karyakarta mobile applications tailored to your election rules.",
       btnText: "Request Demo for this Election"
@@ -282,31 +246,27 @@ export const ElectionsSection = ({ onOpenDemo }) => {
       'lok-sabha': 'लोकसभा निवडणूक',
       'rajya-sabha': 'राज्यसभा निवडणूक',
       'vidhan-sabha': 'विधानसभा निवडणूक',
-      'vidhan-parishad': 'विधान परिषद निवडणूक',
+      'vidhan-parishad': 'विधान परिषद (MLC) निवडणूक',
+      'graduate-teacher': 'पदवीधर व शिक्षक मतदारसंघ निवडणूक',
       'mahanagarpalika': 'महानगरपालिका निवडणूक',
       'nagar-parishad': 'नगरपरिषद निवडणूक',
       'nagar-panchayat': 'नगर पंचायत निवडणूक',
-      'municipal-ward': 'प्रभाग / वॉर्ड निवडणूक',
       'zilla-parishad': 'जिल्हा परिषद निवडणूक',
       'panchayat-samiti': 'पंचायत समिती निवडणूक',
-      'gram-panchayat': 'ग्रामपंचायत निवडणूक',
-      'graduate-constituency': 'पदवीधर मतदारसंघ',
-      'teachers-constituency': 'शिक्षक मतदारसंघ'
+      'gram-panchayat': 'ग्रामपंचायत निवडणूक'
     },
     hi: {
       'lok-sabha': 'लोकसभा चुनाव',
       'rajya-sabha': 'राज्यसभा चुनाव',
       'vidhan-sabha': 'विधानसभा चुनाव',
-      'vidhan-parishad': 'विधान परिषद चुनाव',
-      'mahanagarpalika': 'नगर निगम चुनाव',
+      'vidhan-parishad': 'विधान परिषद (MLC) चुनाव',
+      'graduate-teacher': 'स्नातक एवं शिक्षक निर्वाचन क्षेत्र चुनाव',
+      'mahanagarpalika': 'महानगरपालिका चुनाव',
       'nagar-parishad': 'नगर परिषद चुनाव',
       'nagar-panchayat': 'नगर पंचायत चुनाव',
-      'municipal-ward': 'वार्ड / प्रभाग चुनाव',
       'zilla-parishad': 'जिला परिषद चुनाव',
       'panchayat-samiti': 'पंचायत समिति चुनाव',
-      'gram-panchayat': 'ग्राम पंचायत चुनाव',
-      'graduate-constituency': 'स्नातक निर्वाचन क्षेत्र',
-      'teachers-constituency': 'शिक्षक निर्वाचन क्षेत्र'
+      'gram-panchayat': 'ग्राम पंचायत चुनाव'
     }
   };
 
@@ -345,7 +305,7 @@ export const ElectionsSection = ({ onOpenDemo }) => {
           ))}
         </div>
 
-        {/* 13 Elections Grid */}
+        {/* 11 Elections Grid */}
         <div className="elections-cards-grid">
           {filteredElections.map((election) => {
             const Icon = election.icon;
@@ -435,7 +395,7 @@ export const ElectionsSection = ({ onOpenDemo }) => {
               Contesting an Upcoming Election in Maharashtra or Across India?
             </h3>
             <p className="advisory-text">
-              Mastermind Media provides complete booth-wise voter lists, phonetic Devanagari voter searching, custom voter slip printing, and dedicated war room support for candidates across all 13 election tiers.
+              Mastermind Media provides complete booth-wise voter lists, phonetic Devanagari voter searching, custom voter slip printing, and dedicated war room support for candidates across all 11 election tiers.
             </p>
           </div>
           <div className="advisory-cta">
